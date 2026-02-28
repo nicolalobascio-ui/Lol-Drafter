@@ -1,8 +1,30 @@
 import { NextResponse } from 'next/server';
-import { champions } from '@/app/data/champions'; // Per ora usiamo ancora il file come "finto DB"
+import { prisma } from '@/lib/prisma';
 
 export async function GET() {
-  // Questa funzione simula quello che farebbe un backend vero:
-  // Riceve una richiesta e restituisce i dati
-  return NextResponse.json(champions);
+  try {
+    const champions = await prisma.champion.findMany({
+      include: {
+        counters: true,   // "JOIN" — prendiamo anche i counter
+        synergies: true,  // "JOIN" — prendiamo anche le sinergie
+      },
+    });
+
+    // Formattiamo i dati in un modo ottimale per il frontend
+    const formattedChampions = champions.map(champ => ({
+      id: champ.id,
+      name: champ.name,
+      image: champ.image,
+      counters: champ.counters.map(c => ({ name: c.name, reason: c.reason })),
+      synergies: champ.synergies.map(s => s.name)
+    }));
+
+    return NextResponse.json(formattedChampions);
+  } catch (error) {
+    console.error("Errore durante il fetch dei campioni:", error);
+    return NextResponse.json(
+      { error: "Errore nel caricamento dei dati" },
+      { status: 500 }
+    );
+  }
 }

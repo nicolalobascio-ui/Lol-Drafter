@@ -1,0 +1,37 @@
+
+//Prisma schema file from which the prisma client is generated to create the schemas.
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// Schema "Champion" - Each row is a champion
+model Champion {
+  id        String    @id            
+  name      String                   // Example: "Aatrox"
+  image     String                   // URL of the image
+  counters  Counter[]                // relation: a champion has many counters
+  synergies Synergy[]                // relation: a champion has many synergies
+}
+
+// Schema "Counter" - Each row is a counter of a champion
+model Counter {
+  id         Int      @id @default(autoincrement())
+  name       String                   // Example: "Aatrox"
+  reason     String                   // Example: "Aatrox is a counter"
+  champion   Champion @relation(fields: [championId], references: [id])
+  championId String                   
+}
+
+// Schema "Synergy" - Each row is a synergy of a champion
+model Synergy {
+  id         Int      @id @default(autoincrement())
+  name       String                   // Example: "Aatrox"
+  champion   Champion @relation(fields: [championId], references: [id])
+  championId String                   
+}
