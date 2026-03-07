@@ -30,14 +30,15 @@ async function main() {
                 name: champ.name,
                 image: champ.image,
                 counters: {
-                    create: (champ.counters || []).map((counter) => ({
+                    create: (champ.counters || []).map((counter: any) => ({
                         name: counter.name,
-                        reason: counter.reason,
+                        reason: counter.reason || "",
                     })),
                 },
                 synergies: {
-                    create: (champ.synergies || []).map((synergyName) => ({
-                        name: synergyName,
+                    create: (champ.synergies || []).map((synergy: any) => ({
+                        name: synergy.name,
+                        reason: synergy.reason || ""
                     })),
                 },
             },

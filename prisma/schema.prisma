@@ -32,6 +32,7 @@ model Counter {
 model Synergy {
   id         Int      @id @default(autoincrement())
   name       String                   // Example: "Aatrox"
+  reason     String                   // Example: "Aatrox is a synergy"
   champion   Champion @relation(fields: [championId], references: [id])
   championId String                   
 }

@@ -16,7 +16,7 @@ export async function GET() {
       name: champ.name,
       image: champ.image,
       counters: champ.counters.map(c => ({ name: c.name, reason: c.reason })),
-      synergies: champ.synergies.map(s => s.name)
+      synergies: champ.synergies.map(s => ({ name: s.name, reason: s.reason }))
     }));
 
     return NextResponse.json(formattedChampions);
