@@ -450,6 +450,12 @@ export default function DraftOracle() {
         </div>
       </section>
 
+      {/* Legal / Copyright Footer */}
+      <footer className="w-full max-w-7xl mt-12 py-6 border-t border-[#1e2328] text-center text-xs text-[#c8a951]/60 px-4 mb-4">
+        <p>
+          Lol-Drafter isn&apos;t endorsed by Riot Games and doesn&apos;t reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.
+        </p>
+      </footer>
     </main>
   );
 }
