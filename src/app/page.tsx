@@ -46,24 +46,46 @@ export default function DraftOracle() {
     setActiveSlot("enemy");
   };
 
+  const removeEnemy = (name: string) => setSelectedEnemies((p) => p.filter((x) => x !== name));
+  const removeAlly = (name: string) => setSelectedAllies((p) => p.filter((x) => x !== name));
+
   const toggleSelect = (name: string) => {
-    if (activeSlot === "enemy") {
-      setSelectedEnemies((prev) =>
-        prev.includes(name) ? prev.filter((p) => p !== name) : [...prev, name]
-      );
-      // ensure not selected as ally
-      setSelectedAllies((prev) => prev.filter((p) => p !== name));
-    } else {
-      setSelectedAllies((prev) =>
-        prev.includes(name) ? prev.filter((p) => p !== name) : [...prev, name]
-      );
-      // ensure not selected as enemy
-      setSelectedEnemies((prev) => prev.filter((p) => p !== name));
+    if (selectedEnemies.includes(name)) {
+      removeEnemy(name);
+      return;
+    }
+    if (selectedAllies.includes(name)) {
+      removeAlly(name);
+      return;
+    }
+    if (activeSlot === "enemy" && selectedEnemies.length < 5) {
+      setSelectedEnemies((prev) => [...prev, name]);
+    } else if (activeSlot === "ally" && selectedAllies.length < 5) {
+      setSelectedAllies((prev) => [...prev, name]);
     }
   };
 
-  const removeEnemy = (name: string) => setSelectedEnemies((p) => p.filter((x) => x !== name));
-  const removeAlly = (name: string) => setSelectedAllies((p) => p.filter((x) => x !== name));
+  const handleDragStart = (e: React.DragEvent, name: string) => {
+    e.dataTransfer.setData("champion", name);
+  };
+
+  const handleDragOver = (e: React.DragEvent) => {
+    e.preventDefault();
+  };
+
+  const handleDropAlly = (e: React.DragEvent) => {
+    e.preventDefault();
+    const name = e.dataTransfer.getData("champion");
+    if (!name || selectedAllies.includes(name) || selectedEnemies.includes(name) || selectedAllies.length >= 5) return;
+    setSelectedAllies((prev) => [...prev, name]);
+  };
+
+  const handleDropEnemy = (e: React.DragEvent) => {
+    e.preventDefault();
+    const name = e.dataTransfer.getData("champion");
+    if (!name || selectedAllies.includes(name) || selectedEnemies.includes(name) || selectedEnemies.length >= 5) return;
+    setSelectedEnemies((prev) => [...prev, name]);
+  };
 
   const filteredChampions = useMemo(
     () =>
@@ -76,7 +98,7 @@ export default function DraftOracle() {
   const suggestedCounters = useMemo(() => {
     if (selectedEnemies.length === 0) return [];
 
-    const counterMap: Record<string, { count: number; targets: string[] }> = {};
+    const counterMap: Record<string, { count: number; targets: { name: string; reason: string }[] }> = {};
 
     selectedEnemies.forEach((enemyName) => {
       const enemyData = champions.find((c) => c.name === enemyName);
@@ -84,7 +106,7 @@ export default function DraftOracle() {
         enemyData.counters.forEach((counter) => {
           if (!counterMap[counter.name]) counterMap[counter.name] = { count: 0, targets: [] };
           counterMap[counter.name].count += 1;
-          counterMap[counter.name].targets.push(enemyName);
+          counterMap[counter.name].targets.push({ name: enemyName, reason: counter.reason });
         });
       }
     });
@@ -95,22 +117,36 @@ export default function DraftOracle() {
         return { name, image: champ?.image ?? "", ...data };
       })
       .filter((s) => !selectedAllies.includes(s.name) && !selectedEnemies.includes(s.name))
-      .sort((a, b) => b.count - a.count)
-      .slice(0, 6);
+      .sort((a, b) => b.count - a.count);
   }, [selectedEnemies, selectedAllies, champions]);
 
   const suggestedSynergies = useMemo(() => {
     if (selectedAllies.length === 0) return [];
 
-    const synergyMap: Record<string, { count: number; targets: string[] }> = {};
+    const synergyMap: Record<string, { count: number; targets: { name: string; reason: string }[] }> = {};
 
     selectedAllies.forEach((allyName) => {
+      // 1. Cerca le sinergie listate nel profilo dell'alleato
+      const allyData = champions.find((c) => c.name === allyName);
+      if (allyData?.synergies) {
+        allyData.synergies.forEach((synergy) => {
+          if (!synergyMap[synergy.name]) synergyMap[synergy.name] = { count: 0, targets: [] };
+          if (!synergyMap[synergy.name].targets.some(t => t.name === allyName)) {
+            synergyMap[synergy.name].count += 1;
+            synergyMap[synergy.name].targets.push({ name: allyName, reason: synergy.reason });
+          }
+        });
+      }
+
+      // 2. Cerca i campioni che indicano l'alleato nelle proprie sinergie (lookup inverso)
       champions.forEach((c) => {
         const syn = c.synergies?.find((s) => s.name === allyName);
         if (syn) {
           if (!synergyMap[c.name]) synergyMap[c.name] = { count: 0, targets: [] };
-          synergyMap[c.name].count += 1;
-          synergyMap[c.name].targets.push(allyName);
+          if (!synergyMap[c.name].targets.some(t => t.name === allyName)) {
+            synergyMap[c.name].count += 1;
+            synergyMap[c.name].targets.push({ name: allyName, reason: syn.reason });
+          }
         }
       });
     });
@@ -121,8 +157,7 @@ export default function DraftOracle() {
         return { name, image: champ?.image ?? "", ...data };
       })
       .filter((s) => !selectedAllies.includes(s.name) && !selectedEnemies.includes(s.name))
-      .sort((a, b) => b.count - a.count)
-      .slice(0, 6);
+      .sort((a, b) => b.count - a.count);
   }, [selectedAllies, selectedEnemies, champions]);
 
   return (
@@ -142,7 +177,11 @@ export default function DraftOracle() {
       <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-4 gap-6 flex-1">
         
         {/* Left Column: Allies (Blue Side) */}
-        <div className="flex flex-col gap-3">
+        <div 
+          className="flex flex-col gap-3"
+          onDrop={handleDropAlly}
+          onDragOver={handleDragOver}
+        >
           <div className="flex items-center justify-between bg-blue-900/40 border border-blue-500/30 p-2 rounded-t-lg">
             <h2 className="text-sm font-black text-blue-400 uppercase tracking-tighter">Blue Team (Allies)</h2>
             <span className="text-xs font-bold text-blue-300">{selectedAllies.length}/5</span>
@@ -154,9 +193,10 @@ export default function DraftOracle() {
               return (
                 <div
                   key={`ally-${index}`}
+                  onClick={() => championName && removeAlly(championName)}
                   className={`relative flex items-center h-24 rounded-lg overflow-hidden border ${
-                    championName ? 'border-blue-500/50 bg-blue-900/20' : 'border-slate-800 bg-slate-900/40 border-dashed'
-                  } transition-all duration-300 hover:border-blue-400/80`}
+                    championName ? 'cursor-pointer border-blue-500/50 bg-blue-900/20' : 'border-slate-800 bg-slate-900/40 border-dashed'
+                  } transition-all duration-300 hover:border-blue-400/80 hover:bg-blue-900/40`}
                 >
                   {championName && champData ? (
                     <>
@@ -171,7 +211,7 @@ export default function DraftOracle() {
                           ))}
                         </div>
                       </div>
-                      <button onClick={() => removeAlly(championName)} className="absolute top-1 right-1 p-1 bg-red-500/80 hover:bg-red-500 rounded text-[10px] opacity-0 hover:opacity-100 transition-opacity">✕</button>
+                      <button onClick={(e) => { e.stopPropagation(); removeAlly(championName); }} className="absolute top-1 right-1 p-1 bg-red-500/80 hover:bg-red-500 rounded text-[10px] opacity-0 hover:opacity-100 transition-opacity">✕</button>
                     </>
                   ) : (
                     <div className="w-full h-full flex items-center justify-center text-slate-600 text-sm font-bold italic">
@@ -228,13 +268,15 @@ export default function DraftOracle() {
                 <button
                   key={champ.id}
                   onClick={() => !isDisabled && toggleSelect(champ.name)}
+                  draggable={!isSelectedEnemy && !isSelectedAlly}
+                  onDragStart={(e) => handleDragStart(e, champ.name)}
                   title={champ.name}
                   disabled={isDisabled}
                   className={`relative flex flex-col items-center justify-center p-3 rounded-xl border-2 transition-all duration-300 ${
-                    isSelectedEnemy ? "border-red-500 bg-red-900/30" : 
-                    isSelectedAlly ? "border-blue-500 bg-blue-900/30" : 
+                    isSelectedEnemy ? "border-red-500 bg-red-900/30 cursor-pointer" : 
+                    isSelectedAlly ? "border-blue-500 bg-blue-900/30 cursor-pointer" : 
                     isDisabled ? "border-transparent opacity-30 cursor-not-allowed" :
-                    "border-slate-800 bg-[#111318] hover:border-[#c8a951] hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(200,169,81,0.2)]"
+                    "border-slate-800 bg-[#111318] hover:border-[#c8a951] hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(200,169,81,0.2)] cursor-grab"
                   }`}
                 >
                   <div className={`w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden border-2 mb-2 transition-all ${
@@ -258,7 +300,11 @@ export default function DraftOracle() {
         </div>
 
         {/* Right Column: Enemies (Red Side) */}
-        <div className="flex flex-col gap-3">
+        <div 
+          className="flex flex-col gap-3"
+          onDrop={handleDropEnemy}
+          onDragOver={handleDragOver}
+        >
           <div className="flex items-center justify-between bg-red-900/40 border border-red-500/30 p-2 rounded-t-lg">
             <span className="text-xs font-bold text-red-300">{selectedEnemies.length}/5</span>
             <h2 className="text-sm font-black text-red-400 uppercase tracking-tighter">Red Team (Enemies)</h2>
@@ -270,9 +316,10 @@ export default function DraftOracle() {
               return (
                 <div
                   key={`enemy-${index}`}
+                  onClick={() => championName && removeEnemy(championName)}
                   className={`relative flex items-center justify-end h-24 rounded-lg overflow-hidden border ${
-                    championName ? 'border-red-500/50 bg-red-900/20' : 'border-slate-800 bg-slate-900/40 border-dashed'
-                  } transition-all duration-300 hover:border-red-400/80`}
+                    championName ? 'cursor-pointer border-red-500/50 bg-red-900/20' : 'border-slate-800 bg-slate-900/40 border-dashed'
+                  } transition-all duration-300 hover:border-red-400/80 hover:bg-red-900/40`}
                 >
                   {championName && champData ? (
                     <>
@@ -287,7 +334,7 @@ export default function DraftOracle() {
                         </div>
                       </div>
                       <img src={champData.image} alt={champData.name} className="w-24 h-full object-cover" />
-                      <button onClick={() => removeEnemy(championName)} className="absolute top-1 left-1 p-1 bg-red-500/80 hover:bg-red-500 rounded text-[10px] opacity-0 hover:opacity-100 transition-opacity">✕</button>
+                      <button onClick={(e) => { e.stopPropagation(); removeEnemy(championName); }} className="absolute top-1 left-1 p-1 bg-red-500/80 hover:bg-red-500 rounded text-[10px] opacity-0 hover:opacity-100 transition-opacity">✕</button>
                     </>
                   ) : (
                     <div className="w-full h-full flex items-center justify-center text-slate-600 text-sm font-bold italic">
@@ -308,28 +355,27 @@ export default function DraftOracle() {
           
           {/* Left: Recommended Counters */}
           <div className="flex flex-col bg-[#110505] border border-red-900/50 rounded-2xl overflow-hidden">
-             <div className="bg-red-900/40 p-4 border-b border-red-900/50">
+             <div className="bg-red-900/40 p-4 border-b border-red-900/50 flex-shrink-0">
                <h2 className="text-lg font-black uppercase tracking-widest text-red-400">Recommended Counters</h2>
                <p className="text-xs text-red-300">Champions that counter selected enemies</p>
              </div>
-             <div className="p-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+             <div className="p-4 grid grid-cols-1 sm:grid-cols-2 gap-4 max-h-[500px] overflow-y-auto pr-2 custom-scrollbar">
                 {suggestedCounters.map((s) => (
-                   <div key={`counter-${s.name}`} className="flex flex-col p-3 rounded-xl bg-[#0a0a0c] border border-red-900/30 hover:border-red-500/50 transition-colors">
+                   <div key={`counter-${s.name}`} className="flex flex-col p-3 rounded-xl bg-[#0a0a0c] border border-red-900/30 hover:border-red-500/50 transition-colors h-full">
                       <div className="flex items-center gap-3 mb-3">
                          {s.image && <img src={s.image} alt={s.name} className="w-10 h-10 rounded-full border border-red-500/30" />}
                          <div>
                             <h4 className="font-bold text-red-100 uppercase tracking-wider text-sm">{s.name}</h4>
                          </div>
                       </div>
-                      <div className="flex-1 mb-4">
+                      <div className="flex-1 mb-4 flex flex-col gap-2">
                          <span className="text-[10px] text-red-400 uppercase font-bold block mb-1">Strong against:</span>
-                         <div className="flex flex-wrap gap-1">
-                            {s.targets.map(t => (
-                               <span key={t} className="text-[10px] bg-red-950 text-red-200 px-2 py-0.5 rounded-full border border-red-800">
-                                 {t}
-                               </span>
-                            ))}
-                         </div>
+                         {s.targets.map(t => (
+                           <div key={t.name} className="flex flex-col bg-red-950/40 border border-red-900/40 rounded-lg p-2">
+                             <span className="text-xs font-bold text-red-200 uppercase">{t.name}</span>
+                             <p className="text-[10px] text-red-300/80 mt-1 leading-snug">{t.reason}</p>
+                           </div>
+                         ))}
                       </div>
                       <button
                         onClick={() => {
@@ -340,7 +386,7 @@ export default function DraftOracle() {
                           }
                         }}
                         disabled={selectedAllies.length >= 5}
-                        className="w-full py-2 rounded-lg bg-blue-900/40 hover:bg-blue-600 text-blue-200 hover:text-white font-bold text-[10px] uppercase tracking-widest transition-colors disabled:opacity-50"
+                        className="w-full mt-auto py-2 rounded-lg bg-blue-900/40 hover:bg-blue-600 text-blue-200 hover:text-white font-bold text-[10px] uppercase tracking-widest transition-colors disabled:opacity-50"
                       >
                         Draft as Ally
                       </button>
@@ -356,28 +402,27 @@ export default function DraftOracle() {
 
           {/* Right: Recommended Synergies */}
           <div className="flex flex-col bg-[#050a11] border border-blue-900/50 rounded-2xl overflow-hidden">
-             <div className="bg-blue-900/40 p-4 border-b border-blue-900/50 text-right">
+             <div className="bg-blue-900/40 p-4 border-b border-blue-900/50 text-right flex-shrink-0">
                <h2 className="text-lg font-black uppercase tracking-widest text-blue-400">Recommended Synergies</h2>
                <p className="text-xs text-blue-300">Champions that pair well with your allies</p>
              </div>
-             <div className="p-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+             <div className="p-4 grid grid-cols-1 sm:grid-cols-2 gap-4 max-h-[500px] overflow-y-auto pr-2 custom-scrollbar">
                 {suggestedSynergies.map((s) => (
-                   <div key={`synergy-${s.name}`} className="flex flex-col p-3 rounded-xl bg-[#0a0a0c] border border-blue-900/30 hover:border-blue-500/50 transition-colors">
+                   <div key={`synergy-${s.name}`} className="flex flex-col p-3 rounded-xl bg-[#0a0a0c] border border-blue-900/30 hover:border-blue-500/50 transition-colors h-full">
                       <div className="flex flex-row-reverse items-center gap-3 mb-3">
                          {s.image && <img src={s.image} alt={s.name} className="w-10 h-10 rounded-full border border-blue-500/30" />}
                          <div className="text-right">
                             <h4 className="font-bold text-blue-100 uppercase tracking-wider text-sm">{s.name}</h4>
                          </div>
                       </div>
-                      <div className="flex-1 mb-4 text-right">
-                         <span className="text-[10px] text-blue-400 uppercase font-bold block mb-1">Synergizes with:</span>
-                         <div className="flex flex-wrap gap-1 justify-end">
-                            {s.targets.map(t => (
-                               <span key={t} className="text-[10px] bg-blue-950 text-blue-200 px-2 py-0.5 rounded-full border border-blue-800">
-                                 {t}
-                               </span>
-                            ))}
-                         </div>
+                      <div className="flex-1 mb-4 flex flex-col gap-2">
+                         <span className="text-[10px] text-blue-400 uppercase font-bold block mb-1 text-right">Synergizes with:</span>
+                         {s.targets.map(t => (
+                           <div key={t.name} className="flex flex-col bg-blue-950/40 border border-blue-900/40 rounded-lg p-2 text-right">
+                             <span className="text-xs font-bold text-blue-200 uppercase">{t.name}</span>
+                             <p className="text-[10px] text-blue-300/80 mt-1 leading-snug">{t.reason}</p>
+                           </div>
+                         ))}
                       </div>
                       <button
                         onClick={() => {
@@ -388,7 +433,7 @@ export default function DraftOracle() {
                           }
                         }}
                         disabled={selectedAllies.length >= 5}
-                        className="w-full py-2 rounded-lg bg-blue-900/40 hover:bg-blue-600 text-blue-200 hover:text-white font-bold text-[10px] uppercase tracking-widest transition-colors disabled:opacity-50"
+                        className="w-full mt-auto py-2 rounded-lg bg-blue-900/40 hover:bg-blue-600 text-blue-200 hover:text-white font-bold text-[10px] uppercase tracking-widest transition-colors disabled:opacity-50"
                       >
                         Draft as Ally
                       </button>
