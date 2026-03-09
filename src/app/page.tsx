@@ -402,23 +402,23 @@ export default function DraftOracle() {
 
           {/* Right: Recommended Synergies */}
           <div className="flex flex-col bg-[#050a11] border border-blue-900/50 rounded-2xl overflow-hidden">
-             <div className="bg-blue-900/40 p-4 border-b border-blue-900/50 text-right flex-shrink-0">
+             <div className="bg-blue-900/40 p-4 border-b border-blue-900/50 flex-shrink-0">
                <h2 className="text-lg font-black uppercase tracking-widest text-blue-400">Recommended Synergies</h2>
                <p className="text-xs text-blue-300">Champions that pair well with your allies</p>
              </div>
              <div className="p-4 grid grid-cols-1 sm:grid-cols-2 gap-4 max-h-[500px] overflow-y-auto pr-2 custom-scrollbar">
                 {suggestedSynergies.map((s) => (
                    <div key={`synergy-${s.name}`} className="flex flex-col p-3 rounded-xl bg-[#0a0a0c] border border-blue-900/30 hover:border-blue-500/50 transition-colors h-full">
-                      <div className="flex flex-row-reverse items-center gap-3 mb-3">
+                      <div className="flex items-center gap-3 mb-3">
                          {s.image && <img src={s.image} alt={s.name} className="w-10 h-10 rounded-full border border-blue-500/30" />}
-                         <div className="text-right">
+                         <div>
                             <h4 className="font-bold text-blue-100 uppercase tracking-wider text-sm">{s.name}</h4>
                          </div>
                       </div>
                       <div className="flex-1 mb-4 flex flex-col gap-2">
-                         <span className="text-[10px] text-blue-400 uppercase font-bold block mb-1 text-right">Synergizes with:</span>
+                         <span className="text-[10px] text-blue-400 uppercase font-bold block mb-1">Synergizes with:</span>
                          {s.targets.map(t => (
-                           <div key={t.name} className="flex flex-col bg-blue-950/40 border border-blue-900/40 rounded-lg p-2 text-right">
+                           <div key={t.name} className="flex flex-col bg-blue-950/40 border border-blue-900/40 rounded-lg p-2">
                              <span className="text-xs font-bold text-blue-200 uppercase">{t.name}</span>
                              <p className="text-[10px] text-blue-300/80 mt-1 leading-snug">{t.reason}</p>
                            </div>
