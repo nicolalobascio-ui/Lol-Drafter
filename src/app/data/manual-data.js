@@ -8,9 +8,9 @@ export const manualData = {
       { name: "Jax", reason: "Può saltargli addosso per evitare il raggio delle Q e vincere il duello in corpo a corpo" }
     ],
     synergies: [
-      { name: "Orianna", reason: "Ingaggio r aatrox + palla" },
-      { name: "Zilean", reason: "Gap close" },
-      { name: "Yuumi", reason: "movement speed & shield/heal" }
+      { name: "Orianna", reason: "La R di Aatrox raduna i nemici, permettendo ad Orianna di piazzare la palla e scaricare uno Shockwave devastante nel mezzo del fight" },
+      { name: "Zilean", reason: "La velocità della E di Zilean permette ad Aatrox di raggiungere i bersagli più facilmente; la R lo riporta in vita per dominare i teamfight prolungati" },
+      { name: "Yuumi", reason: "Le cure costanti di Yuumi potenziano il sustain naturale di Aatrox, mentre la velocità extra lo aiuta a colpire con le Q senza perdere i bersagli" }
     ]
   },
   "Ahri": {
@@ -22,8 +22,8 @@ export const manualData = {
       { name: "Syndra", reason: "Ha molto più range e può stordirla prima che Ahri arrivi a portata di Charm" }
     ],
     synergies: [
-      { name: "Vi", reason: "Vi ult + full combo ahri = game vinto" },
-      { name: "Maokai", reason: "ult + full combo = kill assicurata" }
+      { name: "Vi", reason: "L'Ultimate di Vi trascina un bersaglio su Ahri, che può colpire con certezza il Charm e completare il burst senza rischiare di mancarlo" },
+      { name: "Maokai", reason: "I CC di Maokai tengono i nemici fermi permettendo ad Ahri di colpire il Charm con sicurezza e finire il carry senza rischio" }
     ]
   },
   "Akali": {
@@ -76,9 +76,9 @@ export const manualData = {
       { name: "Lee Sin", reason: "Può calciarlo via (R) quando Amumu entra, annullando il suo ingaggio" }
     ],
     synergies: [
-      { name: "Miss Fortune", reason: "R mf sul team" },
-      { name: "Danni ap", reason: "Passiva amumu, aumenta i danni puri in base ai danni magici in entrata sui nemici" },
-      { name: "Fiddle", reason: "Doppia ulti ad area" }
+      { name: "Miss Fortune", reason: "La R di Amumu blocca l'intero team nemico, garantendo a Miss Fortune la finestra perfetta per il Bullet Time devastante" },
+      { name: "Syndra", reason: "L'Ultimate di Amumu raduna i nemici permettendo a Syndra di scaricare la combo di sfere su bersagli bloccati e incapaci di scappare" },
+      { name: "Fiddlesticks", reason: "La R di Amumu blocca i nemici in posizione, permettendo a Fiddlesticks di atterrare la Tempesta di Corvi in sicurezza su un gruppo immobile" }
     ]
   },
   "Anivia": {
@@ -89,8 +89,8 @@ export const manualData = {
       { name: "Ziggs", reason: "Pulisce le ondate più velocemente di lei e la punisce se resta ferma nell'Ultimate" },
       { name: "Yone", reason: "Troppa mobilità; può saltare oltre il muro e punirla pesantemente" }
     ], synergies: [
-      { name: "anivia", reason: "ult j4 + ult anivia & doppio muro" },
-      { name: "Poppy", reason: "Schianta i nemici sul muro di anivia" }
+      { name: "Jarvan IV", reason: "Il Cataclisma di Jarvan intrappola i nemici permettendo ad Anivia di chiuderli con la Q e creare un muro di ghiaccio che li separa dal team" },
+      { name: "Poppy", reason: "La E di Poppy schianta i nemici contro il muro di ghiaccio di Anivia, garantendo uno stordimento certo per il follow-up di burst" }
     ]
   },
   "Annie": {
@@ -129,9 +129,9 @@ export const manualData = {
       { name: "Samira", reason: "Il cerchio di lame (W) distrugge la Freccia di Ashe a mezz'aria" }
     ],
     synergies: [
-      { name: "Braum", reason: "slow + stun" },
-      { name: "zyra", reason: "slow ashe = zyra non missa il cc" },
-      { name: "Senna", reason: "doppio slow sugli aa di senna" }
+      { name: "Braum", reason: "Il rallentamento degli auto-attacchi di Ashe garantisce che Braum attivi la passiva di rimbalzo su più nemici, stordendoli in catena" },
+      { name: "Zyra", reason: "Il rallentamento costante delle frecce di Ashe garantisce che le radici di Zyra colpiscano sempre il bersaglio senza possibilità di scampo" },
+      { name: "Senna", reason: "Il rallentamento combinato degli auto-attacchi crea un muro di controllo del movimento insormontabile per qualsiasi carry nemico" }
     ]
   },
   "Aurelion Sol": {
@@ -143,9 +143,9 @@ export const manualData = {
       { name: "Akali", reason: "ASol non può colpirla nel fumo e Akali lo elimina con facilità" }
     ],
     synergies: [
-      { name: "j4", reason: "ult j4 + ult aurelion" },
-      { name: "poppy", reason: "buon peel per aurelion" },
-      { name: "Rell", reason: "Raggruppa i nemici per danni ad area di arel" }
+      { name: "Jarvan IV", reason: "Il Cataclisma di Jarvan costringe i nemici a restare nel raggio del soffio di fuoco di Aurelion Sol, massimizzando i danni ad area" },
+      { name: "Poppy", reason: "La W di Poppy protegge Aurelion Sol bloccando i dash nemici, dandogli il tempo di caricare le abilità senza essere interrotto" },
+      { name: "Rell", reason: "La R di Rell attira i nemici nel raggio del soffio di fuoco di Aurelion Sol, massimizzando i danni magici ad area sui bersagli raggruppati" }
     ]
   },
   "Azir": {
@@ -157,9 +157,9 @@ export const manualData = {
       { name: "Yone", reason: "La sua E gli permette di ignorare il muro di Azir e colpirlo direttamente" }
     ],
     synergies: [
-      { name: "Orianna", reason: "Ingaggio r aatrox + palla" },
-      { name: "Zilean", reason: "Gap close" },
-      { name: "Yuumi", reason: "movement speed & shield/heal" }
+      { name: "Orianna", reason: "La palla di Orianna su Azir permette uno Shockwave perfetto quando i soldati spingono i nemici in posizione raggruppata" },
+      { name: "Yasuo", reason: "I soldati di Azir possono lanciare in aria i nemici con la E, garantendo la finestra perfetta per l'Ultimate di Yasuo" },
+      { name: "Lulu", reason: "Scudi e velocità extra proteggono Azir che ha bisogno di tempo per posizionare i soldati correttamente senza essere interrotto" }
     ]
   },
   "Bard": {
@@ -171,8 +171,8 @@ export const manualData = {
       { name: "Pyke", reason: "Ha più mobilità di Bard e può seguirlo nei portali per giustiziarlo" }
     ],
     synergies: [
-      { name: "Cait", reason: "Trappole sulla ult di bard" },
-      { name: "Ezreal", reason: "Lane safe per roam di bard" }
+      { name: "Caitlyn", reason: "L'Ultimate di Bard congela i nemici permettendo a Caitlyn di piazzare trappole sotto di loro per un danni esplosivo garantito al risveglio" },
+      { name: "Ezreal", reason: "Ezreal può gestire la corsia in autonomia durante i roam di Bard, coprendo la mappa con il poke a distanza grazie alla sua E" }
     ]
   },
   "Bel'Veth": {
@@ -223,8 +223,8 @@ export const manualData = {
       { name: "Poppy", reason: "Blocca la carica di Briar con la sua W e la schianta contro i muri" },
       { name: "Vayne", reason: "Può spingerla via con la E e colpirla mentre Briar corre in linea retta" }
     ], synergies: [
-      { name: "Vi", reason: "Vi ult + full combo ahri = game vinto" },
-      { name: "Maokai", reason: "ult + full combo = kill assicurata" }
+      { name: "Vi", reason: "L'Ultimate di Vi aggancia un bersaglio e lo consegna a Briar per il burst devastante nel corpo a corpo senza possibilità di fuga" },
+      { name: "Maokai", reason: "I CC di Maokai bloccano i nemici permettendo a Briar di attaccare senza dover inseguire bersagli in fuga" }
     ]
   },
   "Camille": {
@@ -698,7 +698,7 @@ export const manualData = {
       { name: "Kassadin", reason: "Riduzione danni magici enorme e può interrompere la R di Karthus con la sua Q" },
       { name: "Fizz", reason: "Può usare la E (salto) per diventare intoccabile ed evitare il danno dell'Ultimate di Karthus" },
       { name: "Kindred", reason: "La sua Ultimate crea una zona dove nessuno può morire, annullando la R di Karthus" },
-      { name: "Zhonyas", reason: "Non è un campione, ma l'oggetto Zhonya è il counter assoluto della sua Ultimate" }
+      { name: "Zilean", reason: "La R di Zilean può annullare l'Ultimate globale di Karthus rianimando un alleato già colpito, negando il danno letale" }
     ], synergies: [
       { name: "Nocturne", reason: "L'oscurità copre l'attivazione della R di Karthus creando panico globale" },
       { name: "Shen", reason: "Protezione globale per permettere a Karthus di farmare e scalare in sicurezza" },
@@ -841,11 +841,11 @@ export const manualData = {
       { name: "Janna", reason: "Può allontanarlo con la Q o la R ogni volta che prova a saltare sui carry" },
       { name: "Cassiopeia", reason: "Il Miasma impedisce a Lee Sin di usare la Q o la W (effetto Grounded)" },
       { name: "Jax", reason: "Vince i duelli 1v1 schivando i suoi colpi e stordendolo con il Counter Strike" },
-      { name: "Truundle", reason: "Ruba le sue statistiche e lo blocca con il pilastro (E) durante i suoi dash" }
+      { name: "Trundle", reason: "Ruba le sue statistiche e lo blocca con il pilastro (E) durante i suoi dash" }
     ], synergies: [
       { name: "Yasuo", reason: "Il calcio di Lee Sin lancia in aria i nemici offrendo una finestra certa per la R di Yasuo" },
       { name: "Orianna", reason: "Capacità di calciare i nemici dritti sulla palla per uno Shockwave preciso" },
-      { name: "LeBlanc", reason: "Ottima coordinazione di gank basata sulla mobilità e sul bust istantaneo" }
+      { name: "LeBlanc", reason: "Ottima coordinazione di gank basata sulla mobilità e sul burst istantaneo" }
     ]
   },
   "Leona": {
@@ -944,7 +944,7 @@ export const manualData = {
       { name: "Syndra", reason: "Può eliminare i suoi esserini (voidlings) istantaneamente con la sua W" },
       { name: "Xerath", reason: "Distrugge lo scudo passivo di Malzahar con facilità da lunghissima distanza" },
       { name: "Gangplank", reason: "Può mangiare le arance (W) per liberarsi istantaneamente dalla Ultimate di Malzahar" },
-      { name: "Quicksilver Sash", reason: "L'oggetto (QSS) è il counter assoluto; Malzahar diventa inutile se i carry lo comprano" },
+      { name: "Olaf", reason: "La sua Ultimate lo rende immune alla soppressione di Malzahar, avanzando inarrestabile verso i carry senza poter essere bloccato" },
       { name: "Galio", reason: "Può provocare Malzahar per interrompere la sua Ultimate mentre canalizza" }
     ], synergies: [
       { name: "Vi", reason: "Doppia soppressione point-and-click che elimina ogni possibilità di fuga per i nemici" },
@@ -981,7 +981,7 @@ export const manualData = {
   "Miss Fortune": {
     counters: [
       { name: "Yasuo", reason: "Il muro di vento blocca l'intera durata della sua Ultimate (Bullet Time)" },
-      { name: "Braumm", reason: "Lo scudo di Braum assorbe quasi tutti i proiettili della sua Ultimate" },
+      { name: "Braum", reason: "Lo scudo di Braum assorbe quasi tutti i proiettili della sua Ultimate" },
       { name: "Samira", reason: "Il cerchio di lame distrugge l'Ultimate di MF e i suoi proiettili Q" },
       { name: "Leona", reason: "MF non ha mobilità; se Leona la blocca durante la R, la cancella istantaneamente" },
       { name: "Nocturne", reason: "Spegne la mappa e la interrompe durante la Ultimate saltandole addosso" }
@@ -1086,7 +1086,7 @@ export const manualData = {
     counters: [
       { name: "Fiddlesticks", reason: "La paura e il silenzio impediscono a Nocturne di completare il suo burst" },
       { name: "Jax", reason: "Il Counter Strike blocca gli auto-attacchi di Nocturne e lo stordisce" },
-      { name: "Zhonya's Hourglass", reason: "L'attesa dell'oggetto rende inutile l'intero ingaggio della Ultimate di Nocturne" },
+      { name: "Lissandra", reason: "Può congelare se stessa con la R per negare il burst di Nocturne appena atterra, poi stordirlo con la W quando riappare" },
       { name: "Shen", reason: "Può usare l'Ultimate per proteggere il bersaglio di Nocturne ovunque sulla mappa" },
       { name: "Kha'Zix", reason: "Se Nocturne non lo oneshotta, Kha'Zix vince il duello grazie all'isolamento" }
     ], synergies: [
@@ -1216,7 +1216,7 @@ export const manualData = {
     counters: [
       { name: "Trundle", reason: "Ruba l'armatura di Rammus con la R, rendendolo di carta e vulnerabile" },
       { name: "Vayne", reason: "Danni puri che ignorano completamente l'enorme armatura di Rammus" },
-      { name: "Cleans / QSS", reason: "Liberarsi dalla provocazione (E) rende Rammus inutile nei fight" },
+      { name: "Olaf", reason: "L'Ultimate di Olaf lo rende immune alle provocazioni di Rammus, permettendogli di attaccarlo liberamente ignorando il suo kit di CC" },
       { name: "Morgana", reason: "Il Black Shield impedisce a Rammus di provocare i carry" },
       { name: "Mordekaiser", reason: "Danni magici che ignorano l'armatura fisica e lo isolano nel reame" }
     ], synergies: [
@@ -1334,7 +1334,7 @@ export const manualData = {
       { name: "Pantheon", reason: "Lo stun point-and-click interrompe istantaneamente la sua Ultimate (R)" },
       { name: "Rammus", reason: "Samira si colpisce da sola durante la R; Rammus la blocca con la provocazione" },
       { name: "Lulu", reason: "La metamorfosi la trasforma in scoiattolo nel mezzo della sua Ultimate" },
-      { name: "Alisat", reason: "Può sbalzarla via o stordirla non appena inizia a roteare" },
+      { name: "Alistar", reason: "Può sbalzarla via o stordirla non appena inizia a roteare con la Ultimate" },
       { name: "Vayne", reason: "Può condannarla (E) lontano per interrompere il suo caricamento dello stile" }
     ], synergies: [
       { name: "Nautilus", reason: "CC point-and-click che garantisce a Samira il tempo di caricare lo stile" },
@@ -1346,7 +1346,7 @@ export const manualData = {
     counters: [
       { name: "Trundle", reason: "Ruba le sue enormi statistiche difensive con la R, rendendola fragilissima" },
       { name: "Olaf", reason: "Ignora tutti i suoi rallentamenti e lo stordimento dell'Ultimate grazie alla sua R" },
-      { name: "Cleans / QSS", reason: "Liberarsi dall'Ultimate di Sejuani annulla il suo potenziale di ingaggio" },
+      { name: "Olaf", reason: "La sua Ultimate lo rende immune agli stordimenti di Sejuani, incluso il ghiaccio cristallizzato dell'Ultimate che altrimenti congelerebbe chiunque" },
       { name: "Fiora", reason: "Può parare l'Ultimate (R) di Sejuani e stordirla a sua volta" },
       { name: "Sylas", reason: "Ruba l'Ultimate di Sejuani per un ingaggio a distanza devastante" }
     ], synergies: [
@@ -1387,7 +1387,7 @@ export const manualData = {
       { name: "Renekton", reason: "Può distruggere lo scudo della W di Sett usando la W potenziata (rompi-scudi)" },
       { name: "Mordekaiser", reason: "Vince i trade prolungati grazie alla passiva e alla sottrazione di statistiche" },
       { name: "Jax", reason: "Il Counter Strike blocca i pugni di Sett; Jax vince i duelli 1v1 nel tempo" },
-      { name: "Kiting", reason: "Sett soffre terribilmente i campioni che possono colpirlo senza farsi afferrare" }
+      { name: "Quinn", reason: "L'accecamento della E e la mobilità di Quinn impediscono a Sett di avvicinarsi ai suoi bersagli" }
     ], synergies: [
       { name: "Orianna", reason: "Palla su Sett che corre verso i nemici per un ingaggio Shockwave perfetto" },
       { name: "Lulu", reason: "Scudi e Ultimate per massimizzare la resistenza di Sett durante i trade prolungati" },
@@ -1399,7 +1399,7 @@ export const manualData = {
       { name: "Lee Sin", reason: "La sua E e la Q rivelano Shaco anche se usa l'invisibilità della Q" },
       { name: "Rek'Sai", reason: "Il senso del tremore permette di sentire Shaco mentre si sposta invisibile" },
       { name: "Rengar", reason: "La sua Ultimate rivela il vero Shaco in mezzo ai cloni" },
-      { name: "Sweeping Lens", reason: "L'accessorio (Lente Mobile) è essenziale per vedere la sagoma di Shaco e le scatole" },
+      { name: "Twisted Fate", reason: "La sua Ultimate rivela Shaco sulla mappa eliminando il vantaggio dell'invisibilità e permettendo di anticipare le sue mosse" },
       { name: "Lulu", reason: "Può rivelarlo con la E e trasformarlo in scoiattolo non appena appare" }
     ], synergies: [
       { name: "Teemo", reason: "Doppia minaccia di trappole invisibili che creano il caos nella mappa" },
@@ -1424,7 +1424,7 @@ export const manualData = {
     counters: [
       { name: "Jax", reason: "Il Counter Strike blocca i morsi della forma drago e i suoi auto-attacchi" },
       { name: "Vayne", reason: "Lo sbalzo della E interrompe il salto dell'Ultimate di Shyvana" },
-      { name: "Truundle", reason: "Ruba le sue statistiche e la batte nel corpo a corpo grazie alla sua Q" },
+      { name: "Trundle", reason: "Ruba le sue statistiche e la batte nel corpo a corpo grazie alla sua Q" },
       { name: "Kindred", reason: "L'Ultimate di Kindred nega il burst di Shyvana AP quando atterra" },
       { name: "Poppy", reason: "La W blocca il salto dell'Ultimate di Shyvana, lasciandola a terra" }
     ], synergies: [
@@ -1451,7 +1451,7 @@ export const manualData = {
       { name: "Vayne", reason: "Danni puri sulla vita massima; Sion è solo un bersaglio gigante e lento" },
       { name: "Aatrox", reason: "Sion è una 'batteria di cura' per Aatrox che non sbaglierà mai una Q su di lui" },
       { name: "Fiora", reason: "Può parare la Q o la R di Sion per stordirlo e distruggerlo con danni puri" },
-      { name: "Truundle", reason: "Il pilastro (E) può bloccare Sion durante la carica dell'Ultimate" },
+      { name: "Trundle", reason: "Il pilastro (E) può bloccare Sion durante la carica dell'Ultimate" },
       { name: "Gwen", reason: "Taglia Sion come burro grazie ai suoi danni percentuali sulla salute" }
     ], synergies: [
       { name: "Orianna", reason: "Palla su Sion durante la sua carica per uno Shockwave imprevisto" },
@@ -1475,10 +1475,10 @@ export const manualData = {
   "Skarner": {
     counters: [
       { name: "Olaf", reason: "La sua Ultimate lo rende immune al trascinamento di Skarner" },
-      { name: "Quicksilver Sash", reason: "L'oggetto (QSS) permette di liberarsi istantaneamente dalla sua Ultimate" },
+      { name: "Olaf", reason: "Immune alla soppressione di Skarner grazie all'Ultimate; può avanzare e combatterlo senza essere trascinato via" },
       { name: "Morgana", reason: "Il Black Shield impedisce a Skarner di afferrare il bersaglio con la R" },
       { name: "Vayne", reason: "Lo tiene lontano con la E e lo uccide prima che possa avvicinarsi" },
-      { name: "Truundle", reason: "Ruba le sue resistenze e lo rallenta con il pilastro" }
+      { name: "Trundle", reason: "Ruba le sue resistenze e lo rallenta con il pilastro" }
     ], synergies: [
       { name: "Galio", reason: "L'Ultimate di Galio segue Skarner quando trascina un carry nemico fuori posizione" },
       { name: "Ryze", reason: "Il portale può portare Skarner direttamente accanto ai bersagli prioritari" },
@@ -1501,7 +1501,7 @@ export const manualData = {
   "Soraka": {
     counters: [
       { name: "Blitzcrank", reason: "Se viene grabbata non può curare se stessa efficacemente e muore subito" },
-      { name: "Executioner's Calling", reason: "L'anti-heal (Ferimento Grave) riduce drasticamente l'impatto di Soraka" },
+      { name: "Veigar", reason: "La gabbia imprigiona Soraka impedendole di muoversi o curarsi; l'Ultimate cumulata la elimina in un singolo burst prima che possa reagire" },
       { name: "Nautilus", reason: "La blocca e impedisce che curi i suoi alleati durante il fight" },
       { name: "Pyke", reason: "Può giustiziare i nemici prima che Soraka abbia il tempo di curarli" },
       { name: "Katarina", reason: "La sua Ultimate applica anti-heal a zona, annullando le cure di Soraka" }
@@ -1516,7 +1516,7 @@ export const manualData = {
       { name: "Vayne", reason: "Danni puri costanti; Swain non può curarsi abbastanza contro di lei" },
       { name: "Sylas", reason: "Ruba l'Ultimate di Swain e la usa meglio di lui grazie ai suoi dash" },
       { name: "Kled", reason: "Applica anti-heal del 60% con la Q, rendendo l'Ultimate di Swain inutile" },
-      { name: "Executioner's Calling", reason: "L'anti-heal è fondamentale per impedire a Swain di diventare immortale" },
+      { name: "Cassiopeia", reason: "Lo mantiene a distanza con il Miasma (W) e lo logora costantemente con le E, impedendogli di avvicinarsi e curarsi nel corpo a corpo" },
       { name: "Yone", reason: "Può uscire dal raggio dell'Ultimate di Swain e rientrare quando è finita" }
     ], synergies: [
       { name: "Nautilus", reason: "Il root della passiva e i CC facilitano l'aggancio della E di Swain" },
@@ -1555,7 +1555,7 @@ export const manualData = {
       { name: "Vayne", reason: "Danni puri sulla vita massima; Tahm Kench non può resistere alle sue frecce" },
       { name: "Gwen", reason: "Taglia la sua vita con danni magici percentuali ignorando le sue difese" },
       { name: "Fiora", reason: "Vince i trade lunghi e può parare il suo stordimento o l'ingurgitamento" },
-      { name: "Truundle", reason: "Ruba le sue statistiche difensive rendendolo facile da abbattere" },
+      { name: "Trundle", reason: "Ruba le sue statistiche difensive rendendolo facile da abbattere" },
       { name: "Sylas", reason: "Ruba la sua Ultimate per salvare i propri alleati o isolare i nemici" }
     ], synergies: [
       { name: "Senna", reason: "Sinergia perfetta in bot lane: TK protegge mentre Senna accumula anime" },
@@ -1582,7 +1582,7 @@ export const manualData = {
       { name: "Lulu", reason: "Lo trasforma in scoiattolo non appena salta sul carry, salvando l'alleato" },
       { name: "Rammus", reason: "Talon si uccide da solo colpendo Rammus; la provocazione lo ferma subito" },
       { name: "Lee Sin", reason: "Rileva Talon con la E quando usa l'invisibilità dell'Ultimate" },
-      { name: "Zhonya's Hourglass", reason: "L'oggetto nega completamente il suo potenziale di assassinio" }
+      { name: "Lissandra", reason: "Si congela con la R nel momento esatto del salto di Talon, poi lo stordisce con la W appena appare e lo elimina con il burst" }
     ], synergies: [
       { name: "Shen", reason: "L'Ultimate di Shen protegge Talon durante i suoi movimenti furtivi nella mappa" },
       { name: "Twisted Fate", reason: "Doppia pressione di roaming per dominare le corsie laterali simultaneamente" },
@@ -1599,7 +1599,7 @@ export const manualData = {
     ], synergies: [
       { name: "Sona", reason: "R e W si potenziano con gli scudi alleati, combo devastante" },
       { name: "Orianna", reason: "Doppio scudo e R ad area per teamfight vincenti" },
-      { name: "Amumu", reason: "R di Amumu + R di Seraphine per CC ad area infinito" }
+      { name: "Amumu", reason: "L'invulnerabilità della R di Taric permette ad Amumu di lanciarsi nel fight con la Q senza rischiare di morire durante il canale" }
     ]
   },
   "Teemo": {
@@ -1607,7 +1607,7 @@ export const manualData = {
       { name: "Xerath", reason: "Teemo ha poco raggio; Xerath lo uccide da chilometri di distanza" },
       { name: "Syndra", reason: "Può oneshottarlo con una combo prima che lui possa accecarla" },
       { name: "Ryze", reason: "Le abilità di Ryze non sono auto-attacchi, quindi l'accecamento è inutile" },
-      { name: "Sweeping Lens", reason: "La lente mobile permette di vedere e distruggere tutti i funghi" },
+      { name: "Nocturne", reason: "Lo scudo magico (W) assorbe l'accecamento di Teemo, permettendo a Nocturne di colpire indisturbato e poi ucciderlo nell'oscurità" },
       { name: "Sion", reason: "Può calciare i funghi o i minion addosso a Teemo e ignorare i suoi danni" }
     ], synergies: [
       { name: "Orianna", reason: "Palla su Teemo invisibile per un'Ultimate (R) imprevista" },
@@ -1646,7 +1646,7 @@ export const manualData = {
       { name: "Jax", reason: "Il Counter Strike blocca i morsi di Trundle e i suoi auto-attacchi" },
       { name: "Vayne", reason: "Lo tiene lontano con la E e lo distrugge con danni puri" },
       { name: "Fiora", reason: "Vince i duelli grazie ai danni puri e alla mobilità superiore" },
-      { name: "Kiting", reason: "Trundle soffre i campioni che non può raggiungere a causa di rallentamenti" },
+      { name: "Ashe", reason: "Il rallentamento costante degli auto-attacchi di Ashe impedisce a Trundle di raggiungere qualsiasi bersaglio, annullando la sua minaccia" },
       { name: "Kayle", reason: "Lo distrugge a distanza dopo il livello 11, ignorando le sue difese" }
     ], synergies: [
       { name: "Yasuo", reason: "Il pilastro di Trundle può attivare l'Ultimate di Yasuo in alcune condizioni" },
@@ -1660,7 +1660,7 @@ export const manualData = {
       { name: "Malphite", reason: "L'armatura e la riduzione di velocità d'attacco rendono Tryndamere inutile" },
       { name: "Nasus", reason: "La W (Invecchiamento) riduce la velocità di Tryndamere a zero" },
       { name: "Teemo", reason: "L'accecamento impedisce a Tryndamere di infliggere danni durante la sua R" },
-      { name: "Kiting", reason: "Tryndamere può essere tenuto lontano finché la sua Ultimate non scade" }
+      { name: "Vayne", reason: "La E spinge via Tryndamere e i danni puri lo eliminano gradualmente anche durante la sua Ultimate" }
     ], synergies: [
       { name: "Yuumi", reason: "Cure e velocità impediscono ai nemici di scappare da Tryndamere" },
       { name: "Lulu", reason: "La Ultimate di Lulu garantisce vita extra durante la R di Tryndamere" },
@@ -1699,7 +1699,7 @@ export const manualData = {
       { name: "Jax", reason: "Il Counter Strike blocca i colpi potenziati di Udyr, vincendo il duello" },
       { name: "Ashe", reason: "Il rallentamento costante impedisce a Udyr di raggiungere chiunque" },
       { name: "Anivia", reason: "I muri e il ghiaccio rendono impossibile per Udyr avvicinarsi ai bersagli" },
-      { name: "Kiting", reason: "Udyr è vulnerabile a qualsiasi forma di controllo del movimento costante" }
+      { name: "Teemo", reason: "L'accecamento e il veleno delle trappole puniscono duramente Udyr che deve correre verso i bersagli senza possibilità di colpire" }
     ], synergies: [
       { name: "Yuumi", reason: "Velocità extra per un Udyr che corre nel centro del teamfight" },
       { name: "Karma", reason: "Scudi e velocità bonus per colmare il divario con i nemici" },
@@ -1790,7 +1790,7 @@ export const manualData = {
       { name: "Morgana", reason: "Il Black Shield protegge il carry dall'Ultimate (R) point-and-click di Vi" },
       { name: "Poppy", reason: "La W blocca la carica della Q di Vi, annullando il suo principale strumento di ingaggio" },
       { name: "Fiora", reason: "Può usare la W per parare l'Ultimate di Vi e stordirla a sua volta" },
-      { name: "Black Cleaver", reason: "Non è un campione, ma l'armatura di Vi soffre molto contro i tank distruttori" }
+      { name: "Gwen", reason: "La sua zona incantata (W) esclude i pugni di Vi e la distrugge con danni magici percentuali che ignorano la sua armatura" }
     ], synergies: [
       { name: "Ahri", reason: "L'ingaggio di Vi blocca il bersaglio per il colpo certo del Charm di Ahri" },
       { name: "LeBlanc", reason: "Burst combinato micidiale su bersagli singoli bloccati da Vi" },
@@ -1826,7 +1826,7 @@ export const manualData = {
   "Vladimir": {
     counters: [
       { name: "Kled", reason: "La sua Q riduce le cure di Vladimir del 60%, distruggendo il suo sustain" },
-      { name: "Executioner's Calling", reason: "L'anti-heal è obbligatorio per impedirgli di rigenerarsi nei fight" },
+      { name: "Xerath", reason: "Lo bombarda dall'estremo raggio prima che Vladimir possa immergersi con la W; il poke costante accumula danni che non può curare abbastanza velocemente" },
       { name: "Malzahar", reason: "Lo blocca con la Ultimate impedendogli di usare la pozza (W) per scappare" },
       { name: "Kassadin", reason: "Scala quanto lui ma resiste meglio ai danni magici nel lungo periodo" },
       { name: "Anivia", reason: "Muri e rallentamenti rendono difficile per Vladimir raggiungere i carry" }
@@ -1854,7 +1854,7 @@ export const manualData = {
       { name: "Jax", reason: "Il Counter Strike blocca tutti gli attacchi di Warwick, inclusa l'Ultimate (R)" },
       { name: "Olaf", reason: "L'Ultimate di Olaf lo rende immune alla soppressione di Warwick" },
       { name: "Kled", reason: "Riduce drasticamente le cure di Warwick con la sua Q potenziata" },
-      { name: "Executioner's Calling", reason: "Fondamentale per ridurre il suo sustain quando scende sotto il 50% di vita" },
+      { name: "Gangplank", reason: "Le arance rimuovono la soppressione dell'Ultimate di Warwick, permettendo a GP di liberarsi e rispondere con i barili" },
       { name: "Vayne", reason: "Lo tiene a distanza e lo punisce con danni puri che Warwick non può curare velocemente" }
     ], synergies: [
       { name: "Leona", reason: "CC pesanti che bloccano il bersaglio per l'Ultimate di Warwick" },
@@ -1959,7 +1959,7 @@ export const manualData = {
       { name: "Nautilus", reason: "CC pesanti che bloccano l'ospite e impediscono a Yuumi di staccarsi in sicurezza" },
       { name: "Leona", reason: "Può bloccare l'intero team con la R, rendendo le cure di Yuumi insufficienti" },
       { name: "Mordekaiser", reason: "Se Morde porta l'ospite nel reame della morte, Yuumi rimane fuori da sola" },
-      { name: "Executioner's Calling", reason: "L'anti-heal è fondamentale per contrastare le sue cure costanti" }
+      { name: "Brand", reason: "I danni ad area di Brand colpiscono sia l'ospite che Yuumi, rendendo impossibile la cura continua e bruciando entrambi simultaneamente" }
     ], synergies: [
       { name: "Hecarim", reason: "Cure e velocità extra trasformano Hecarim in un Nightmare inarrestabile" },
       { name: "Master Yi", reason: "Invulnerabilità e velocità rendono Master Yi una minaccia letale nel late game" },

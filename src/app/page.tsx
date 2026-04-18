@@ -204,11 +204,15 @@ export default function DraftOracle() {
                       <div className="flex-1 p-3 flex flex-col justify-center bg-gradient-to-r from-blue-900/60 to-transparent">
                         <h3 className="text-lg font-bold text-blue-100 uppercase italic leading-tight">{champData.name}</h3>
                         <div className="mt-1 flex flex-col gap-1">
-                          {champData.synergies?.slice(0, 2).map((syn, i) => (
-                             <span key={i} className="text-[10px] text-blue-300 truncate" title={syn.reason}>
-                               • {syn.name} (Syn)
-                             </span>
-                          ))}
+                          {champData.synergies && champData.synergies.length > 0 ? (
+                            champData.synergies.slice(0, 2).map((syn, i) => (
+                              <span key={i} className="text-[10px] text-blue-300/90 truncate" title={syn.reason}>
+                                ↗ {syn.name}
+                              </span>
+                            ))
+                          ) : (
+                            <span className="text-[10px] text-blue-900/60 italic">nessuna sinergia</span>
+                          )}
                         </div>
                       </div>
                       <button onClick={(e) => { e.stopPropagation(); removeAlly(championName); }} className="absolute top-1 right-1 p-1 bg-red-500/80 hover:bg-red-500 rounded text-[10px] opacity-0 hover:opacity-100 transition-opacity">✕</button>
@@ -326,11 +330,15 @@ export default function DraftOracle() {
                       <div className="flex-1 p-3 flex flex-col justify-center items-end bg-gradient-to-l from-red-900/60 to-transparent">
                         <h3 className="text-lg font-bold text-red-100 uppercase italic leading-tight">{champData.name}</h3>
                         <div className="mt-1 flex flex-col gap-1 items-end">
-                          {champData.counters?.slice(0, 2).map((ctr, i) => (
-                             <span key={i} className="text-[10px] text-red-300 truncate text-right" title={ctr.reason}>
-                               (Ctr) {ctr.name} •
-                             </span>
-                          ))}
+                          {champData.counters && champData.counters.length > 0 ? (
+                            champData.counters.slice(0, 2).map((ctr, i) => (
+                              <span key={i} className="text-[10px] text-red-300/90 truncate text-right" title={ctr.reason}>
+                                {ctr.name} ✕
+                              </span>
+                            ))
+                          ) : (
+                            <span className="text-[10px] text-red-900/60 italic">nessun counter</span>
+                          )}
                         </div>
                       </div>
                       <img src={champData.image} alt={champData.name} className="w-24 h-full object-cover" />
@@ -359,13 +367,18 @@ export default function DraftOracle() {
                <h2 className="text-lg font-black uppercase tracking-widest text-red-400">Recommended Counters</h2>
                <p className="text-xs text-red-300">Champions that counter selected enemies</p>
              </div>
-             <div className="p-4 grid grid-cols-1 sm:grid-cols-2 gap-4 max-h-[500px] overflow-y-auto pr-2 custom-scrollbar">
+             <div className="p-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {suggestedCounters.map((s) => (
                    <div key={`counter-${s.name}`} className="flex flex-col p-3 rounded-xl bg-[#0a0a0c] border border-red-900/30 hover:border-red-500/50 transition-colors h-full">
                       <div className="flex items-center gap-3 mb-3">
                          {s.image && <img src={s.image} alt={s.name} className="w-10 h-10 rounded-full border border-red-500/30" />}
-                         <div>
+                         <div className="flex-1">
                             <h4 className="font-bold text-red-100 uppercase tracking-wider text-sm">{s.name}</h4>
+                            {s.count > 1 && (
+                              <span className="text-[9px] font-black text-red-400 bg-red-900/40 px-1.5 py-0.5 rounded mt-0.5 inline-block">
+                                ✕ {s.count} nemici
+                              </span>
+                            )}
                          </div>
                       </div>
                       <div className="flex-1 mb-4 flex flex-col gap-2">
@@ -406,13 +419,18 @@ export default function DraftOracle() {
                <h2 className="text-lg font-black uppercase tracking-widest text-blue-400">Recommended Synergies</h2>
                <p className="text-xs text-blue-300">Champions that pair well with your allies</p>
              </div>
-             <div className="p-4 grid grid-cols-1 sm:grid-cols-2 gap-4 max-h-[500px] overflow-y-auto pr-2 custom-scrollbar">
+             <div className="p-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {suggestedSynergies.map((s) => (
                    <div key={`synergy-${s.name}`} className="flex flex-col p-3 rounded-xl bg-[#0a0a0c] border border-blue-900/30 hover:border-blue-500/50 transition-colors h-full">
                       <div className="flex items-center gap-3 mb-3">
                          {s.image && <img src={s.image} alt={s.name} className="w-10 h-10 rounded-full border border-blue-500/30" />}
-                         <div>
+                         <div className="flex-1">
                             <h4 className="font-bold text-blue-100 uppercase tracking-wider text-sm">{s.name}</h4>
+                            {s.count > 1 && (
+                              <span className="text-[9px] font-black text-blue-400 bg-blue-900/40 px-1.5 py-0.5 rounded mt-0.5 inline-block">
+                                ↗ {s.count} alleati
+                              </span>
+                            )}
                          </div>
                       </div>
                       <div className="flex-1 mb-4 flex flex-col gap-2">
