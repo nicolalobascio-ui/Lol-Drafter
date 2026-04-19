@@ -15,6 +15,7 @@ export async function GET() {
       id: champ.id,
       name: champ.name,
       image: champ.image,
+      role: champ.role,
       counters: champ.counters.map(c => ({ name: c.name, reason: c.reason })),
       synergies: champ.synergies.map(s => ({ name: s.name, reason: s.reason }))
     }));

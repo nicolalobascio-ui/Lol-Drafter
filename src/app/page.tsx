@@ -15,9 +15,14 @@ interface Champion {
   id: string;
   name: string;
   image: string;
+  role: string[];
   counters: Counter[];
   synergies?: Synergy[];
 }
+
+const ROLE_ORDER = ["Top", "Jungle", "Mid", "Bot", "Support"];
+const BLUE_PICK_ORDER = [1, 4, 5, 8, 9];
+const RED_PICK_ORDER = [2, 3, 6, 7, 10];
 
 export default function DraftOracle() {
   const [champions, setChampions] = useState<Champion[]>([]);
@@ -38,6 +43,10 @@ export default function DraftOracle() {
   const [selectedAllies, setSelectedAllies] = useState<string[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [activeSlot, setActiveSlot] = useState<"enemy" | "ally">("enemy");
+  const [selectedRole, setSelectedRole] = useState<string>("All");
+  const [counterRoleFilter, setCounterRoleFilter] = useState<string>("All");
+  const [synergyRoleFilter, setSynergyRoleFilter] = useState<string>("All");
+  const [isBlueSide, setIsBlueSide] = useState<boolean>(true);
 
   const resetDraft = () => {
     setSelectedEnemies([]);
@@ -89,10 +98,12 @@ export default function DraftOracle() {
 
   const filteredChampions = useMemo(
     () =>
-      champions.filter((c) =>
-        c.name.toLowerCase().includes(searchTerm.trim().toLowerCase())
-      ),
-    [champions, searchTerm]
+      champions.filter((c) => {
+        const matchesSearch = c.name.toLowerCase().includes(searchTerm.trim().toLowerCase());
+        const matchesRole = selectedRole === "All" || c.role.includes(selectedRole);
+        return matchesSearch && matchesRole;
+      }),
+    [champions, searchTerm, selectedRole]
   );
 
   const suggestedCounters = useMemo(() => {
@@ -160,17 +171,57 @@ export default function DraftOracle() {
       .sort((a, b) => b.count - a.count);
   }, [selectedAllies, selectedEnemies, champions]);
 
+  const groupedCounters = useMemo(() => {
+    const grouped: Record<string, typeof suggestedCounters> = {};
+    for (const s of suggestedCounters) {
+      const champ = champions.find((c) => c.name === s.name);
+      const primaryRole = champ?.role?.[0] ?? "Other";
+      if (!grouped[primaryRole]) grouped[primaryRole] = [];
+      grouped[primaryRole].push(s);
+    }
+    return ROLE_ORDER
+      .filter((r) => grouped[r])
+      .map((r) => ({ role: r, items: grouped[r] }))
+      .concat(grouped["Other"] ? [{ role: "Other", items: grouped["Other"] }] : []);
+  }, [suggestedCounters, champions]);
+
+  const groupedSynergies = useMemo(() => {
+    const grouped: Record<string, typeof suggestedSynergies> = {};
+    for (const s of suggestedSynergies) {
+      const champ = champions.find((c) => c.name === s.name);
+      const primaryRole = champ?.role?.[0] ?? "Other";
+      if (!grouped[primaryRole]) grouped[primaryRole] = [];
+      grouped[primaryRole].push(s);
+    }
+    return ROLE_ORDER
+      .filter((r) => grouped[r])
+      .map((r) => ({ role: r, items: grouped[r] }))
+      .concat(grouped["Other"] ? [{ role: "Other", items: grouped["Other"] }] : []);
+  }, [suggestedSynergies, champions]);
+
   return (
     <main className="min-h-screen bg-[#0a0a0c] text-slate-100 p-4 font-sans flex flex-col items-center">
       {/* Header */}
       <header className="w-full max-w-7xl flex justify-between items-center mb-6">
         <h1 className="text-3xl font-black uppercase tracking-widest text-[#c8a951] italic">Draft Oracle</h1>
-        <button
-          onClick={resetDraft}
-          className="px-4 py-2 bg-red-600/10 hover:bg-red-600/20 border border-red-500/50 rounded-xl transition-all text-xs font-black uppercase tracking-widest text-red-500"
-        >
-          Reset Draft
-        </button>
+        <div className="flex items-center gap-3">
+          <button
+            onClick={() => setIsBlueSide((p) => !p)}
+            className={`px-4 py-2 rounded-xl transition-all text-xs font-black uppercase tracking-widest border ${
+              isBlueSide
+                ? "bg-blue-600/20 hover:bg-blue-600/30 border-blue-500/50 text-blue-400"
+                : "bg-red-600/20 hover:bg-red-600/30 border-red-500/50 text-red-400"
+            }`}
+          >
+            {isBlueSide ? "Blue Side" : "Red Side"} ⇄
+          </button>
+          <button
+            onClick={resetDraft}
+            className="px-4 py-2 bg-red-600/10 hover:bg-red-600/20 border border-red-500/50 rounded-xl transition-all text-xs font-black uppercase tracking-widest text-red-500"
+          >
+            Reset Draft
+          </button>
+        </div>
       </header>
 
       {/* Main Grid: 3 Columns Desktop / Stacked Mobile */}
@@ -198,6 +249,9 @@ export default function DraftOracle() {
                     championName ? 'cursor-pointer border-blue-500/50 bg-blue-900/20' : 'border-slate-800 bg-slate-900/40 border-dashed'
                   } transition-all duration-300 hover:border-blue-400/80 hover:bg-blue-900/40`}
                 >
+                  <div className="absolute bottom-1 left-1 z-10 bg-blue-900/80 text-blue-300 text-[9px] font-black px-1.5 py-0.5 rounded">
+                    #{isBlueSide ? BLUE_PICK_ORDER[index] : RED_PICK_ORDER[index]}
+                  </div>
                   {championName && champData ? (
                     <>
                       <img src={champData.image} alt={champData.name} className="w-24 h-full object-cover" />
@@ -251,6 +305,22 @@ export default function DraftOracle() {
                   Pick Enemy
                 </button>
              </div>
+          </div>
+
+          <div className="flex flex-wrap gap-1 justify-center">
+            {["All", ...ROLE_ORDER].map((role) => (
+              <button
+                key={role}
+                onClick={() => setSelectedRole(role)}
+                className={`px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider transition-all duration-200 ${
+                  selectedRole === role
+                    ? "bg-[#c8a951] text-black"
+                    : "bg-[#111318] text-slate-400 border border-[#1e2328] hover:text-[#c8a951] hover:border-[#c8a951]/40"
+                }`}
+              >
+                {role}
+              </button>
+            ))}
           </div>
 
           <input
@@ -325,6 +395,9 @@ export default function DraftOracle() {
                     championName ? 'cursor-pointer border-red-500/50 bg-red-900/20' : 'border-slate-800 bg-slate-900/40 border-dashed'
                   } transition-all duration-300 hover:border-red-400/80 hover:bg-red-900/40`}
                 >
+                  <div className="absolute bottom-1 right-1 z-10 bg-red-900/80 text-red-300 text-[9px] font-black px-1.5 py-0.5 rounded">
+                    #{isBlueSide ? RED_PICK_ORDER[index] : BLUE_PICK_ORDER[index]}
+                  </div>
                   {championName && champData ? (
                     <>
                       <div className="flex-1 p-3 flex flex-col justify-center items-end bg-gradient-to-l from-red-900/60 to-transparent">
@@ -365,50 +438,68 @@ export default function DraftOracle() {
           <div className="flex flex-col bg-[#110505] border border-red-900/50 rounded-2xl overflow-hidden">
              <div className="bg-red-900/40 p-4 border-b border-red-900/50 flex-shrink-0">
                <h2 className="text-lg font-black uppercase tracking-widest text-red-400">Recommended Counters</h2>
-               <p className="text-xs text-red-300">Champions that counter selected enemies</p>
+               <p className="text-xs text-red-300 mb-3">Champions that counter selected enemies</p>
+               <div className="flex flex-wrap gap-1">
+                 {["All", ...ROLE_ORDER].map((r) => (
+                   <button key={r} onClick={() => setCounterRoleFilter(r)}
+                     className={`px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wider transition-all ${
+                       counterRoleFilter === r ? "bg-[#c8a951] text-black" : "bg-red-950/60 text-red-400 border border-red-900/50 hover:border-[#c8a951]/50 hover:text-[#c8a951]"
+                     }`}>{r}</button>
+                 ))}
+               </div>
              </div>
-             <div className="p-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {suggestedCounters.map((s) => (
-                   <div key={`counter-${s.name}`} className="flex flex-col p-3 rounded-xl bg-[#0a0a0c] border border-red-900/30 hover:border-red-500/50 transition-colors h-full">
-                      <div className="flex items-center gap-3 mb-3">
-                         {s.image && <img src={s.image} alt={s.name} className="w-10 h-10 rounded-full border border-red-500/30" />}
-                         <div className="flex-1">
-                            <h4 className="font-bold text-red-100 uppercase tracking-wider text-sm">{s.name}</h4>
-                            {s.count > 1 && (
-                              <span className="text-[9px] font-black text-red-400 bg-red-900/40 px-1.5 py-0.5 rounded mt-0.5 inline-block">
-                                ✕ {s.count} nemici
-                              </span>
-                            )}
-                         </div>
-                      </div>
-                      <div className="flex-1 mb-4 flex flex-col gap-2">
-                         <span className="text-[10px] text-red-400 uppercase font-bold block mb-1">Strong against:</span>
-                         {s.targets.map(t => (
-                           <div key={t.name} className="flex flex-col bg-red-950/40 border border-red-900/40 rounded-lg p-2">
-                             <span className="text-xs font-bold text-red-200 uppercase">{t.name}</span>
-                             <p className="text-[10px] text-red-300/80 mt-1 leading-snug">{t.reason}</p>
-                           </div>
-                         ))}
-                      </div>
-                      <button
-                        onClick={() => {
-                          if (selectedAllies.length < 5) {
-                            setSelectedAllies((p) => (p.includes(s.name) ? p : [...p, s.name]));
-                            setSelectedEnemies((p) => p.filter((x) => x !== s.name));
-                            setActiveSlot("ally");
-                          }
-                        }}
-                        disabled={selectedAllies.length >= 5}
-                        className="w-full mt-auto py-2 rounded-lg bg-blue-900/40 hover:bg-blue-600 text-blue-200 hover:text-white font-bold text-[10px] uppercase tracking-widest transition-colors disabled:opacity-50"
-                      >
-                        Draft as Ally
-                      </button>
-                   </div>
-                ))}
-                {suggestedCounters.length === 0 && (
-                   <div className="col-span-full py-8 text-center text-xs text-red-900/50 uppercase font-black">
+             <div className="p-4 flex flex-col gap-6">
+                {groupedCounters.length === 0 ? (
+                   <div className="py-8 text-center text-xs text-red-900/50 uppercase font-black">
                      Select an enemy to see counters
                    </div>
+                ) : (
+                  groupedCounters.filter(({ role }) => counterRoleFilter === "All" || role === counterRoleFilter).map(({ role, items }) => (
+                    <div key={role}>
+                      <div className="bg-[#1a1408] border-l-4 border-[#c8a951] px-4 py-3 mb-4 rounded-r-lg shadow-[inset_0_0_20px_rgba(200,169,81,0.08)]">
+                        <span className="text-2xl font-black text-[#c8a951] uppercase tracking-[0.2em] drop-shadow-[0_0_8px_rgba(200,169,81,0.5)]">{role}</span>
+                      </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        {items.map((s) => (
+                          <div key={`counter-${s.name}`} className="flex flex-col p-3 rounded-xl bg-[#0a0a0c] border border-red-900/30 hover:border-red-500/50 transition-colors h-full">
+                            <div className="flex items-center gap-3 mb-3">
+                              {s.image && <img src={s.image} alt={s.name} className="w-10 h-10 rounded-full border border-red-500/30" />}
+                              <div className="flex-1">
+                                <h4 className="font-bold text-red-100 uppercase tracking-wider text-sm">{s.name}</h4>
+                                {s.count > 1 && (
+                                  <span className="text-[9px] font-black text-red-400 bg-red-900/40 px-1.5 py-0.5 rounded mt-0.5 inline-block">
+                                    ✕ {s.count} nemici
+                                  </span>
+                                )}
+                              </div>
+                            </div>
+                            <div className="flex-1 mb-4 flex flex-col gap-2">
+                              <span className="text-[10px] text-red-400 uppercase font-bold block mb-1">Strong against:</span>
+                              {s.targets.map(t => (
+                                <div key={t.name} className="flex flex-col bg-red-950/40 border border-red-900/40 rounded-lg p-2">
+                                  <span className="text-xs font-bold text-red-200 uppercase">{t.name}</span>
+                                  <p className="text-xs text-red-300/80 mt-1 leading-snug">{t.reason}</p>
+                                </div>
+                              ))}
+                            </div>
+                            <button
+                              onClick={() => {
+                                if (selectedAllies.length < 5) {
+                                  setSelectedAllies((p) => (p.includes(s.name) ? p : [...p, s.name]));
+                                  setSelectedEnemies((p) => p.filter((x) => x !== s.name));
+                                  setActiveSlot("ally");
+                                }
+                              }}
+                              disabled={selectedAllies.length >= 5}
+                              className="w-full mt-auto py-2 rounded-lg bg-blue-900/40 hover:bg-blue-600 text-blue-200 hover:text-white font-bold text-[10px] uppercase tracking-widest transition-colors disabled:opacity-50"
+                            >
+                              Draft as Ally
+                            </button>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))
                 )}
              </div>
           </div>
@@ -417,50 +508,68 @@ export default function DraftOracle() {
           <div className="flex flex-col bg-[#050a11] border border-blue-900/50 rounded-2xl overflow-hidden">
              <div className="bg-blue-900/40 p-4 border-b border-blue-900/50 flex-shrink-0">
                <h2 className="text-lg font-black uppercase tracking-widest text-blue-400">Recommended Synergies</h2>
-               <p className="text-xs text-blue-300">Champions that pair well with your allies</p>
+               <p className="text-xs text-blue-300 mb-3">Champions that pair well with your allies</p>
+               <div className="flex flex-wrap gap-1">
+                 {["All", ...ROLE_ORDER].map((r) => (
+                   <button key={r} onClick={() => setSynergyRoleFilter(r)}
+                     className={`px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wider transition-all ${
+                       synergyRoleFilter === r ? "bg-[#c8a951] text-black" : "bg-blue-950/60 text-blue-400 border border-blue-900/50 hover:border-[#c8a951]/50 hover:text-[#c8a951]"
+                     }`}>{r}</button>
+                 ))}
+               </div>
              </div>
-             <div className="p-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {suggestedSynergies.map((s) => (
-                   <div key={`synergy-${s.name}`} className="flex flex-col p-3 rounded-xl bg-[#0a0a0c] border border-blue-900/30 hover:border-blue-500/50 transition-colors h-full">
-                      <div className="flex items-center gap-3 mb-3">
-                         {s.image && <img src={s.image} alt={s.name} className="w-10 h-10 rounded-full border border-blue-500/30" />}
-                         <div className="flex-1">
-                            <h4 className="font-bold text-blue-100 uppercase tracking-wider text-sm">{s.name}</h4>
-                            {s.count > 1 && (
-                              <span className="text-[9px] font-black text-blue-400 bg-blue-900/40 px-1.5 py-0.5 rounded mt-0.5 inline-block">
-                                ↗ {s.count} alleati
-                              </span>
-                            )}
-                         </div>
-                      </div>
-                      <div className="flex-1 mb-4 flex flex-col gap-2">
-                         <span className="text-[10px] text-blue-400 uppercase font-bold block mb-1">Synergizes with:</span>
-                         {s.targets.map(t => (
-                           <div key={t.name} className="flex flex-col bg-blue-950/40 border border-blue-900/40 rounded-lg p-2">
-                             <span className="text-xs font-bold text-blue-200 uppercase">{t.name}</span>
-                             <p className="text-[10px] text-blue-300/80 mt-1 leading-snug">{t.reason}</p>
-                           </div>
-                         ))}
-                      </div>
-                      <button
-                        onClick={() => {
-                          if (selectedAllies.length < 5) {
-                            setSelectedAllies((p) => (p.includes(s.name) ? p : [...p, s.name]));
-                            setSelectedEnemies((p) => p.filter((x) => x !== s.name));
-                            setActiveSlot("ally");
-                          }
-                        }}
-                        disabled={selectedAllies.length >= 5}
-                        className="w-full mt-auto py-2 rounded-lg bg-blue-900/40 hover:bg-blue-600 text-blue-200 hover:text-white font-bold text-[10px] uppercase tracking-widest transition-colors disabled:opacity-50"
-                      >
-                        Draft as Ally
-                      </button>
-                   </div>
-                ))}
-                {suggestedSynergies.length === 0 && (
-                   <div className="col-span-full py-8 text-center text-xs text-blue-900/50 uppercase font-black">
+             <div className="p-4 flex flex-col gap-6">
+                {groupedSynergies.length === 0 ? (
+                   <div className="py-8 text-center text-xs text-blue-900/50 uppercase font-black">
                      Select an ally to see synergies
                    </div>
+                ) : (
+                  groupedSynergies.filter(({ role }) => synergyRoleFilter === "All" || role === synergyRoleFilter).map(({ role, items }) => (
+                    <div key={role}>
+                      <div className="bg-[#1a1408] border-l-4 border-[#c8a951] px-4 py-3 mb-4 rounded-r-lg shadow-[inset_0_0_20px_rgba(200,169,81,0.08)]">
+                        <span className="text-2xl font-black text-[#c8a951] uppercase tracking-[0.2em] drop-shadow-[0_0_8px_rgba(200,169,81,0.5)]">{role}</span>
+                      </div>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        {items.map((s) => (
+                          <div key={`synergy-${s.name}`} className="flex flex-col p-3 rounded-xl bg-[#0a0a0c] border border-blue-900/30 hover:border-blue-500/50 transition-colors h-full">
+                            <div className="flex items-center gap-3 mb-3">
+                              {s.image && <img src={s.image} alt={s.name} className="w-10 h-10 rounded-full border border-blue-500/30" />}
+                              <div className="flex-1">
+                                <h4 className="font-bold text-blue-100 uppercase tracking-wider text-sm">{s.name}</h4>
+                                {s.count > 1 && (
+                                  <span className="text-[9px] font-black text-blue-400 bg-blue-900/40 px-1.5 py-0.5 rounded mt-0.5 inline-block">
+                                    ↗ {s.count} alleati
+                                  </span>
+                                )}
+                              </div>
+                            </div>
+                            <div className="flex-1 mb-4 flex flex-col gap-2">
+                              <span className="text-[10px] text-blue-400 uppercase font-bold block mb-1">Synergizes with:</span>
+                              {s.targets.map(t => (
+                                <div key={t.name} className="flex flex-col bg-blue-950/40 border border-blue-900/40 rounded-lg p-2">
+                                  <span className="text-xs font-bold text-blue-200 uppercase">{t.name}</span>
+                                  <p className="text-xs text-blue-300/80 mt-1 leading-snug">{t.reason}</p>
+                                </div>
+                              ))}
+                            </div>
+                            <button
+                              onClick={() => {
+                                if (selectedAllies.length < 5) {
+                                  setSelectedAllies((p) => (p.includes(s.name) ? p : [...p, s.name]));
+                                  setSelectedEnemies((p) => p.filter((x) => x !== s.name));
+                                  setActiveSlot("ally");
+                                }
+                              }}
+                              disabled={selectedAllies.length >= 5}
+                              className="w-full mt-auto py-2 rounded-lg bg-blue-900/40 hover:bg-blue-600 text-blue-200 hover:text-white font-bold text-[10px] uppercase tracking-widest transition-colors disabled:opacity-50"
+                            >
+                              Draft as Ally
+                            </button>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))
                 )}
              </div>
           </div>

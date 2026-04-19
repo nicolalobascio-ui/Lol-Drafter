@@ -29,6 +29,7 @@ async function main() {
                 id: champ.id,
                 name: champ.name,
                 image: champ.image,
+                role: (champ as typeof champ & { role?: string[] }).role ?? [],
                 counters: {
                     create: (champ.counters || []).map((counter: any) => ({
                         name: counter.name,

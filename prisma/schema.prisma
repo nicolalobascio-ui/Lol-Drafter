@@ -12,9 +12,10 @@ datasource db {
 
 // Schema "Champion" - Each row is a champion
 model Champion {
-  id        String    @id            
+  id        String    @id
   name      String                   // Example: "Aatrox"
   image     String                   // URL of the image
+  role      String[]                 // Example: ["Top", "Mid"]
   counters  Counter[]                // relation: a champion has many counters
   synergies Synergy[]                // relation: a champion has many synergies
 }

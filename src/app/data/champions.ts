@@ -8,6 +8,9 @@ export const champions = [
     "id": "Aatrox",
     "name": "Aatrox",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Aatrox.png",
+    "role": [
+      "Top"
+    ],
     "counters": [
       {
         "name": "Fiora",
@@ -49,6 +52,9 @@ export const champions = [
     "id": "Ahri",
     "name": "Ahri",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Ahri.png",
+    "role": [
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Yasuo",
@@ -86,6 +92,10 @@ export const champions = [
     "id": "Akali",
     "name": "Akali",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Akali.png",
+    "role": [
+      "Mid",
+      "Top"
+    ],
     "counters": [
       {
         "name": "Lee Sin",
@@ -127,6 +137,10 @@ export const champions = [
     "id": "Akshan",
     "name": "Akshan",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Akshan.png",
+    "role": [
+      "Mid",
+      "Bot"
+    ],
     "counters": [
       {
         "name": "Yasuo",
@@ -164,6 +178,9 @@ export const champions = [
     "id": "Alistar",
     "name": "Alistar",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Alistar.png",
+    "role": [
+      "Support"
+    ],
     "counters": [
       {
         "name": "Morgana",
@@ -205,6 +222,10 @@ export const champions = [
     "id": "Amumu",
     "name": "Amumu",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Amumu.png",
+    "role": [
+      "Jungle",
+      "Support"
+    ],
     "counters": [
       {
         "name": "Olaf",
@@ -246,6 +267,9 @@ export const champions = [
     "id": "Anivia",
     "name": "Anivia",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Anivia.png",
+    "role": [
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Kassadin",
@@ -283,6 +307,10 @@ export const champions = [
     "id": "Annie",
     "name": "Annie",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Annie.png",
+    "role": [
+      "Mid",
+      "Support"
+    ],
     "counters": [
       {
         "name": "Syndra",
@@ -320,6 +348,9 @@ export const champions = [
     "id": "Aphelios",
     "name": "Aphelios",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Aphelios.png",
+    "role": [
+      "Bot"
+    ],
     "counters": [
       {
         "name": "Braum",
@@ -361,6 +392,10 @@ export const champions = [
     "id": "Ashe",
     "name": "Ashe",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Ashe.png",
+    "role": [
+      "Bot",
+      "Support"
+    ],
     "counters": [
       {
         "name": "Braum",
@@ -402,6 +437,9 @@ export const champions = [
     "id": "AurelionSol",
     "name": "Aurelion Sol",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/AurelionSol.png",
+    "role": [
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Fizz",
@@ -443,6 +481,9 @@ export const champions = [
     "id": "Azir",
     "name": "Azir",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Azir.png",
+    "role": [
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Xerath",
@@ -484,6 +525,9 @@ export const champions = [
     "id": "Bard",
     "name": "Bard",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Bard.png",
+    "role": [
+      "Support"
+    ],
     "counters": [
       {
         "name": "Morgana",
@@ -521,6 +565,9 @@ export const champions = [
     "id": "Belveth",
     "name": "Bel'Veth",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Belveth.png",
+    "role": [
+      "Jungle"
+    ],
     "counters": [
       {
         "name": "Rammus",
@@ -554,6 +601,9 @@ export const champions = [
     "id": "Blitzcrank",
     "name": "Blitzcrank",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Blitzcrank.png",
+    "role": [
+      "Support"
+    ],
     "counters": [
       {
         "name": "Morgana",
@@ -595,6 +645,10 @@ export const champions = [
     "id": "Brand",
     "name": "Brand",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Brand.png",
+    "role": [
+      "Support",
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Xerath",
@@ -636,6 +690,9 @@ export const champions = [
     "id": "Braum",
     "name": "Braum",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Braum.png",
+    "role": [
+      "Support"
+    ],
     "counters": [],
     "synergies": []
   },
@@ -643,6 +700,9 @@ export const champions = [
     "id": "Briar",
     "name": "Briar",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Briar.png",
+    "role": [
+      "Jungle"
+    ],
     "counters": [
       {
         "name": "Jax",
@@ -680,6 +740,9 @@ export const champions = [
     "id": "Caitlyn",
     "name": "Caitlyn",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Caitlyn.png",
+    "role": [
+      "Bot"
+    ],
     "counters": [],
     "synergies": []
   },
@@ -687,6 +750,9 @@ export const champions = [
     "id": "Camille",
     "name": "Camille",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Camille.png",
+    "role": [
+      "Top"
+    ],
     "counters": [
       {
         "name": "Jax",
@@ -724,6 +790,9 @@ export const champions = [
     "id": "Cassiopeia",
     "name": "Cassiopeia",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Cassiopeia.png",
+    "role": [
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Galio",
@@ -761,6 +830,10 @@ export const champions = [
     "id": "Chogath",
     "name": "Cho'Gath",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Chogath.png",
+    "role": [
+      "Top",
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Vayne",
@@ -802,6 +875,9 @@ export const champions = [
     "id": "Corki",
     "name": "Corki",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Corki.png",
+    "role": [
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Yasuo",
@@ -843,6 +919,9 @@ export const champions = [
     "id": "Darius",
     "name": "Darius",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Darius.png",
+    "role": [
+      "Top"
+    ],
     "counters": [
       {
         "name": "Yorick",
@@ -884,6 +963,10 @@ export const champions = [
     "id": "Diana",
     "name": "Diana",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Diana.png",
+    "role": [
+      "Mid",
+      "Jungle"
+    ],
     "counters": [
       {
         "name": "Mordekaiser",
@@ -925,6 +1008,9 @@ export const champions = [
     "id": "Draven",
     "name": "Draven",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Draven.png",
+    "role": [
+      "Bot"
+    ],
     "counters": [
       {
         "name": "Nautilus",
@@ -966,6 +1052,10 @@ export const champions = [
     "id": "DrMundo",
     "name": "Dr. Mundo",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/DrMundo.png",
+    "role": [
+      "Top",
+      "Jungle"
+    ],
     "counters": [
       {
         "name": "Vayne",
@@ -1007,6 +1097,10 @@ export const champions = [
     "id": "Ekko",
     "name": "Ekko",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Ekko.png",
+    "role": [
+      "Mid",
+      "Jungle"
+    ],
     "counters": [
       {
         "name": "Kassadin",
@@ -1048,6 +1142,9 @@ export const champions = [
     "id": "Elise",
     "name": "Elise",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Elise.png",
+    "role": [
+      "Jungle"
+    ],
     "counters": [
       {
         "name": "Olaf",
@@ -1089,6 +1186,9 @@ export const champions = [
     "id": "Evelynn",
     "name": "Evelynn",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Evelynn.png",
+    "role": [
+      "Jungle"
+    ],
     "counters": [
       {
         "name": "Rengar",
@@ -1130,6 +1230,9 @@ export const champions = [
     "id": "Ezreal",
     "name": "Ezreal",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Ezreal.png",
+    "role": [
+      "Bot"
+    ],
     "counters": [
       {
         "name": "Yasuo",
@@ -1171,6 +1274,10 @@ export const champions = [
     "id": "Fiddlesticks",
     "name": "Fiddlesticks",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Fiddlesticks.png",
+    "role": [
+      "Jungle",
+      "Support"
+    ],
     "counters": [
       {
         "name": "Sylas",
@@ -1212,6 +1319,9 @@ export const champions = [
     "id": "Fiora",
     "name": "Fiora",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Fiora.png",
+    "role": [
+      "Top"
+    ],
     "counters": [
       {
         "name": "Poppy",
@@ -1241,6 +1351,9 @@ export const champions = [
     "id": "Fizz",
     "name": "Fizz",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Fizz.png",
+    "role": [
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Kassadin",
@@ -1282,6 +1395,10 @@ export const champions = [
     "id": "Galio",
     "name": "Galio",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Galio.png",
+    "role": [
+      "Mid",
+      "Support"
+    ],
     "counters": [
       {
         "name": "Vayne",
@@ -1323,6 +1440,9 @@ export const champions = [
     "id": "Gangplank",
     "name": "Gangplank",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Gangplank.png",
+    "role": [
+      "Top"
+    ],
     "counters": [
       {
         "name": "Azir",
@@ -1360,6 +1480,9 @@ export const champions = [
     "id": "Garen",
     "name": "Garen",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Garen.png",
+    "role": [
+      "Top"
+    ],
     "counters": [
       {
         "name": "Vayne",
@@ -1397,6 +1520,9 @@ export const champions = [
     "id": "Gnar",
     "name": "Gnar",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Gnar.png",
+    "role": [
+      "Top"
+    ],
     "counters": [
       {
         "name": "Irelia",
@@ -1438,6 +1564,11 @@ export const champions = [
     "id": "Gragas",
     "name": "Gragas",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Gragas.png",
+    "role": [
+      "Jungle",
+      "Top",
+      "Support"
+    ],
     "counters": [
       {
         "name": "Yasuo",
@@ -1479,6 +1610,9 @@ export const champions = [
     "id": "Graves",
     "name": "Graves",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Graves.png",
+    "role": [
+      "Jungle"
+    ],
     "counters": [
       {
         "name": "Rammus",
@@ -1520,6 +1654,10 @@ export const champions = [
     "id": "Gwen",
     "name": "Gwen",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Gwen.png",
+    "role": [
+      "Top",
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Fiora",
@@ -1561,6 +1699,9 @@ export const champions = [
     "id": "Hecarim",
     "name": "Hecarim",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Hecarim.png",
+    "role": [
+      "Jungle"
+    ],
     "counters": [
       {
         "name": "Thresh",
@@ -1602,6 +1743,11 @@ export const champions = [
     "id": "Heimerdinger",
     "name": "Heimerdinger",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Heimerdinger.png",
+    "role": [
+      "Mid",
+      "Top",
+      "Bot"
+    ],
     "counters": [
       {
         "name": "Syndra",
@@ -1643,6 +1789,9 @@ export const champions = [
     "id": "Hwei",
     "name": "Hwei",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Hwei.png",
+    "role": [
+      "Mid"
+    ],
     "counters": [],
     "synergies": []
   },
@@ -1650,6 +1799,9 @@ export const champions = [
     "id": "Illaoi",
     "name": "Illaoi",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Illaoi.png",
+    "role": [
+      "Top"
+    ],
     "counters": [
       {
         "name": "Yorick",
@@ -1691,6 +1843,10 @@ export const champions = [
     "id": "Irelia",
     "name": "Irelia",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Irelia.png",
+    "role": [
+      "Top",
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Jax",
@@ -1732,6 +1888,9 @@ export const champions = [
     "id": "Ivern",
     "name": "Ivern",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Ivern.png",
+    "role": [
+      "Jungle"
+    ],
     "counters": [
       {
         "name": "Rengar",
@@ -1773,6 +1932,9 @@ export const champions = [
     "id": "Janna",
     "name": "Janna",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Janna.png",
+    "role": [
+      "Support"
+    ],
     "counters": [
       {
         "name": "Blitzcrank",
@@ -1814,6 +1976,9 @@ export const champions = [
     "id": "JarvanIV",
     "name": "Jarvan IV",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/JarvanIV.png",
+    "role": [
+      "Jungle"
+    ],
     "counters": [
       {
         "name": "Poppy",
@@ -1855,6 +2020,10 @@ export const champions = [
     "id": "Jax",
     "name": "Jax",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Jax.png",
+    "role": [
+      "Top",
+      "Jungle"
+    ],
     "counters": [
       {
         "name": "Malphite",
@@ -1896,6 +2065,10 @@ export const champions = [
     "id": "Jayce",
     "name": "Jayce",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Jayce.png",
+    "role": [
+      "Top",
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Yasuo",
@@ -1937,6 +2110,9 @@ export const champions = [
     "id": "Jhin",
     "name": "Jhin",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Jhin.png",
+    "role": [
+      "Bot"
+    ],
     "counters": [],
     "synergies": []
   },
@@ -1944,6 +2120,9 @@ export const champions = [
     "id": "Jinx",
     "name": "Jinx",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Jinx.png",
+    "role": [
+      "Bot"
+    ],
     "counters": [
       {
         "name": "Braum",
@@ -1985,6 +2164,9 @@ export const champions = [
     "id": "Kaisa",
     "name": "Kai'Sa",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Kaisa.png",
+    "role": [
+      "Bot"
+    ],
     "counters": [
       {
         "name": "Yasuo",
@@ -2026,6 +2208,9 @@ export const champions = [
     "id": "Kalista",
     "name": "Kalista",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Kalista.png",
+    "role": [
+      "Bot"
+    ],
     "counters": [
       {
         "name": "Nasus",
@@ -2067,6 +2252,10 @@ export const champions = [
     "id": "Karma",
     "name": "Karma",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Karma.png",
+    "role": [
+      "Support",
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Yasuo",
@@ -2108,6 +2297,10 @@ export const champions = [
     "id": "Karthus",
     "name": "Karthus",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Karthus.png",
+    "role": [
+      "Jungle",
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Soraka",
@@ -2149,6 +2342,9 @@ export const champions = [
     "id": "Kassadin",
     "name": "Kassadin",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Kassadin.png",
+    "role": [
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Pantheon",
@@ -2190,6 +2386,9 @@ export const champions = [
     "id": "Katarina",
     "name": "Katarina",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Katarina.png",
+    "role": [
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Lulu",
@@ -2231,6 +2430,10 @@ export const champions = [
     "id": "Kayle",
     "name": "Kayle",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Kayle.png",
+    "role": [
+      "Top",
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Irelia",
@@ -2272,6 +2475,9 @@ export const champions = [
     "id": "Kayn",
     "name": "Kayn",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Kayn.png",
+    "role": [
+      "Jungle"
+    ],
     "counters": [
       {
         "name": "Poppy",
@@ -2313,6 +2519,9 @@ export const champions = [
     "id": "Kennen",
     "name": "Kennen",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Kennen.png",
+    "role": [
+      "Top"
+    ],
     "counters": [
       {
         "name": "Janna",
@@ -2354,6 +2563,9 @@ export const champions = [
     "id": "Khazix",
     "name": "Kha'Zix",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Khazix.png",
+    "role": [
+      "Jungle"
+    ],
     "counters": [
       {
         "name": "Rammus",
@@ -2395,6 +2607,9 @@ export const champions = [
     "id": "Kindred",
     "name": "Kindred",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Kindred.png",
+    "role": [
+      "Jungle"
+    ],
     "counters": [
       {
         "name": "Lee Sin",
@@ -2436,6 +2651,9 @@ export const champions = [
     "id": "Kled",
     "name": "Kled",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Kled.png",
+    "role": [
+      "Top"
+    ],
     "counters": [
       {
         "name": "Fiora",
@@ -2477,6 +2695,9 @@ export const champions = [
     "id": "KogMaw",
     "name": "Kog'Maw",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/KogMaw.png",
+    "role": [
+      "Bot"
+    ],
     "counters": [
       {
         "name": "Lucian",
@@ -2518,6 +2739,9 @@ export const champions = [
     "id": "KSante",
     "name": "K'Sante",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/KSante.png",
+    "role": [
+      "Top"
+    ],
     "counters": [
       {
         "name": "Garen",
@@ -2559,6 +2783,9 @@ export const champions = [
     "id": "Leblanc",
     "name": "LeBlanc",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Leblanc.png",
+    "role": [
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Lissandra",
@@ -2600,6 +2827,9 @@ export const champions = [
     "id": "LeeSin",
     "name": "Lee Sin",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/LeeSin.png",
+    "role": [
+      "Jungle"
+    ],
     "counters": [
       {
         "name": "Poppy",
@@ -2641,6 +2871,9 @@ export const champions = [
     "id": "Leona",
     "name": "Leona",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Leona.png",
+    "role": [
+      "Support"
+    ],
     "counters": [
       {
         "name": "Morgana",
@@ -2682,6 +2915,9 @@ export const champions = [
     "id": "Lillia",
     "name": "Lillia",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Lillia.png",
+    "role": [
+      "Jungle"
+    ],
     "counters": [
       {
         "name": "Master Yi",
@@ -2723,6 +2959,9 @@ export const champions = [
     "id": "Lissandra",
     "name": "Lissandra",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Lissandra.png",
+    "role": [
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Kassadin",
@@ -2764,6 +3003,10 @@ export const champions = [
     "id": "Lucian",
     "name": "Lucian",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Lucian.png",
+    "role": [
+      "Bot",
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Yasuo",
@@ -2805,6 +3048,10 @@ export const champions = [
     "id": "Lulu",
     "name": "Lulu",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Lulu.png",
+    "role": [
+      "Support",
+      "Top"
+    ],
     "counters": [
       {
         "name": "Blitzcrank",
@@ -2846,6 +3093,10 @@ export const champions = [
     "id": "Lux",
     "name": "Lux",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Lux.png",
+    "role": [
+      "Support",
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Yasuo",
@@ -2887,6 +3138,10 @@ export const champions = [
     "id": "Malphite",
     "name": "Malphite",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Malphite.png",
+    "role": [
+      "Top",
+      "Support"
+    ],
     "counters": [
       {
         "name": "Sylas",
@@ -2928,6 +3183,9 @@ export const champions = [
     "id": "Malzahar",
     "name": "Malzahar",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Malzahar.png",
+    "role": [
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Syndra",
@@ -2969,6 +3227,11 @@ export const champions = [
     "id": "Maokai",
     "name": "Maokai",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Maokai.png",
+    "role": [
+      "Support",
+      "Top",
+      "Jungle"
+    ],
     "counters": [
       {
         "name": "Sylas",
@@ -3010,6 +3273,9 @@ export const champions = [
     "id": "MasterYi",
     "name": "Master Yi",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/MasterYi.png",
+    "role": [
+      "Jungle"
+    ],
     "counters": [
       {
         "name": "Jax",
@@ -3051,6 +3317,9 @@ export const champions = [
     "id": "Milio",
     "name": "Milio",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Milio.png",
+    "role": [
+      "Support"
+    ],
     "counters": [],
     "synergies": []
   },
@@ -3058,6 +3327,9 @@ export const champions = [
     "id": "MissFortune",
     "name": "Miss Fortune",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/MissFortune.png",
+    "role": [
+      "Bot"
+    ],
     "counters": [
       {
         "name": "Yasuo",
@@ -3099,6 +3371,10 @@ export const champions = [
     "id": "MonkeyKing",
     "name": "Wukong",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/MonkeyKing.png",
+    "role": [
+      "Jungle",
+      "Top"
+    ],
     "counters": [
       {
         "name": "Garen",
@@ -3140,6 +3416,9 @@ export const champions = [
     "id": "Mordekaiser",
     "name": "Mordekaiser",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Mordekaiser.png",
+    "role": [
+      "Top"
+    ],
     "counters": [
       {
         "name": "Fiora",
@@ -3181,6 +3460,10 @@ export const champions = [
     "id": "Morgana",
     "name": "Morgana",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Morgana.png",
+    "role": [
+      "Support",
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Karma",
@@ -3222,6 +3505,9 @@ export const champions = [
     "id": "Naafiri",
     "name": "Naafiri",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Naafiri.png",
+    "role": [
+      "Mid"
+    ],
     "counters": [],
     "synergies": []
   },
@@ -3229,6 +3515,9 @@ export const champions = [
     "id": "Nami",
     "name": "Nami",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Nami.png",
+    "role": [
+      "Support"
+    ],
     "counters": [
       {
         "name": "Yasuo",
@@ -3270,6 +3559,9 @@ export const champions = [
     "id": "Nasus",
     "name": "Nasus",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Nasus.png",
+    "role": [
+      "Top"
+    ],
     "counters": [
       {
         "name": "Sylas",
@@ -3311,6 +3603,9 @@ export const champions = [
     "id": "Nautilus",
     "name": "Nautilus",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Nautilus.png",
+    "role": [
+      "Support"
+    ],
     "counters": [
       {
         "name": "Morgana",
@@ -3352,6 +3647,10 @@ export const champions = [
     "id": "Neeko",
     "name": "Neeko",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Neeko.png",
+    "role": [
+      "Mid",
+      "Support"
+    ],
     "counters": [],
     "synergies": []
   },
@@ -3359,6 +3658,9 @@ export const champions = [
     "id": "Nidalee",
     "name": "Nidalee",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Nidalee.png",
+    "role": [
+      "Jungle"
+    ],
     "counters": [
       {
         "name": "Yasuo",
@@ -3400,6 +3702,9 @@ export const champions = [
     "id": "Nilah",
     "name": "Nilah",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Nilah.png",
+    "role": [
+      "Bot"
+    ],
     "counters": [
       {
         "name": "Xayah",
@@ -3441,6 +3746,9 @@ export const champions = [
     "id": "Nocturne",
     "name": "Nocturne",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Nocturne.png",
+    "role": [
+      "Jungle"
+    ],
     "counters": [
       {
         "name": "Fiddlesticks",
@@ -3482,6 +3790,9 @@ export const champions = [
     "id": "Nunu",
     "name": "Nunu e Willump",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Nunu.png",
+    "role": [
+      "Jungle"
+    ],
     "counters": [],
     "synergies": []
   },
@@ -3489,6 +3800,10 @@ export const champions = [
     "id": "Olaf",
     "name": "Olaf",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Olaf.png",
+    "role": [
+      "Jungle",
+      "Top"
+    ],
     "counters": [
       {
         "name": "Kled",
@@ -3530,6 +3845,9 @@ export const champions = [
     "id": "Orianna",
     "name": "Orianna",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Orianna.png",
+    "role": [
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Syndra",
@@ -3571,6 +3889,9 @@ export const champions = [
     "id": "Ornn",
     "name": "Ornn",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Ornn.png",
+    "role": [
+      "Top"
+    ],
     "counters": [
       {
         "name": "Fiora",
@@ -3612,6 +3933,10 @@ export const champions = [
     "id": "Pantheon",
     "name": "Pantheon",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Pantheon.png",
+    "role": [
+      "Top",
+      "Support"
+    ],
     "counters": [
       {
         "name": "Malphite",
@@ -3653,6 +3978,11 @@ export const champions = [
     "id": "Poppy",
     "name": "Poppy",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Poppy.png",
+    "role": [
+      "Top",
+      "Jungle",
+      "Support"
+    ],
     "counters": [
       {
         "name": "Darius",
@@ -3694,6 +4024,9 @@ export const champions = [
     "id": "Pyke",
     "name": "Pyke",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Pyke.png",
+    "role": [
+      "Support"
+    ],
     "counters": [
       {
         "name": "Morgana",
@@ -3735,6 +4068,9 @@ export const champions = [
     "id": "Qiyana",
     "name": "Qiyana",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Qiyana.png",
+    "role": [
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Vex",
@@ -3776,6 +4112,9 @@ export const champions = [
     "id": "Quinn",
     "name": "Quinn",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Quinn.png",
+    "role": [
+      "Top"
+    ],
     "counters": [
       {
         "name": "Malphite",
@@ -3817,6 +4156,9 @@ export const champions = [
     "id": "Rakan",
     "name": "Rakan",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Rakan.png",
+    "role": [
+      "Support"
+    ],
     "counters": [
       {
         "name": "Thresh",
@@ -3858,6 +4200,9 @@ export const champions = [
     "id": "Rammus",
     "name": "Rammus",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Rammus.png",
+    "role": [
+      "Jungle"
+    ],
     "counters": [
       {
         "name": "Trundle",
@@ -3899,6 +4244,9 @@ export const champions = [
     "id": "RekSai",
     "name": "Rek'Sai",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/RekSai.png",
+    "role": [
+      "Jungle"
+    ],
     "counters": [
       {
         "name": "Jax",
@@ -3940,6 +4288,9 @@ export const champions = [
     "id": "Rell",
     "name": "Rell",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Rell.png",
+    "role": [
+      "Support"
+    ],
     "counters": [
       {
         "name": "Thresh",
@@ -3981,6 +4332,9 @@ export const champions = [
     "id": "Renata",
     "name": "Renata Glasc",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Renata.png",
+    "role": [
+      "Support"
+    ],
     "counters": [
       {
         "name": "Sivir",
@@ -4022,6 +4376,9 @@ export const champions = [
     "id": "Renekton",
     "name": "Renekton",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Renekton.png",
+    "role": [
+      "Top"
+    ],
     "counters": [
       {
         "name": "Illaoi",
@@ -4063,6 +4420,10 @@ export const champions = [
     "id": "Rengar",
     "name": "Rengar",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Rengar.png",
+    "role": [
+      "Jungle",
+      "Top"
+    ],
     "counters": [
       {
         "name": "Jax",
@@ -4104,6 +4465,9 @@ export const champions = [
     "id": "Riven",
     "name": "Riven",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Riven.png",
+    "role": [
+      "Top"
+    ],
     "counters": [
       {
         "name": "Poppy",
@@ -4145,6 +4509,10 @@ export const champions = [
     "id": "Rumble",
     "name": "Rumble",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Rumble.png",
+    "role": [
+      "Top",
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Yone",
@@ -4186,6 +4554,9 @@ export const champions = [
     "id": "Ryze",
     "name": "Ryze",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Ryze.png",
+    "role": [
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Xerath",
@@ -4227,6 +4598,9 @@ export const champions = [
     "id": "Samira",
     "name": "Samira",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Samira.png",
+    "role": [
+      "Bot"
+    ],
     "counters": [
       {
         "name": "Pantheon",
@@ -4268,6 +4642,9 @@ export const champions = [
     "id": "Sejuani",
     "name": "Sejuani",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Sejuani.png",
+    "role": [
+      "Jungle"
+    ],
     "counters": [
       {
         "name": "Trundle",
@@ -4309,6 +4686,10 @@ export const champions = [
     "id": "Senna",
     "name": "Senna",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Senna.png",
+    "role": [
+      "Support",
+      "Bot"
+    ],
     "counters": [
       {
         "name": "Blitzcrank",
@@ -4350,6 +4731,10 @@ export const champions = [
     "id": "Seraphine",
     "name": "Seraphine",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Seraphine.png",
+    "role": [
+      "Support",
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Yasuo",
@@ -4391,6 +4776,10 @@ export const champions = [
     "id": "Sett",
     "name": "Sett",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Sett.png",
+    "role": [
+      "Top",
+      "Support"
+    ],
     "counters": [
       {
         "name": "Vayne",
@@ -4432,6 +4821,9 @@ export const champions = [
     "id": "Shaco",
     "name": "Shaco",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Shaco.png",
+    "role": [
+      "Jungle"
+    ],
     "counters": [
       {
         "name": "Lee Sin",
@@ -4473,6 +4865,9 @@ export const champions = [
     "id": "Shen",
     "name": "Shen",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Shen.png",
+    "role": [
+      "Top"
+    ],
     "counters": [
       {
         "name": "Mordekaiser",
@@ -4514,6 +4909,9 @@ export const champions = [
     "id": "Shyvana",
     "name": "Shyvana",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Shyvana.png",
+    "role": [
+      "Jungle"
+    ],
     "counters": [
       {
         "name": "Jax",
@@ -4555,6 +4953,9 @@ export const champions = [
     "id": "Singed",
     "name": "Singed",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Singed.png",
+    "role": [
+      "Top"
+    ],
     "counters": [
       {
         "name": "Vayne",
@@ -4596,6 +4997,9 @@ export const champions = [
     "id": "Sion",
     "name": "Sion",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Sion.png",
+    "role": [
+      "Top"
+    ],
     "counters": [
       {
         "name": "Vayne",
@@ -4637,6 +5041,9 @@ export const champions = [
     "id": "Sivir",
     "name": "Sivir",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Sivir.png",
+    "role": [
+      "Bot"
+    ],
     "counters": [
       {
         "name": "Draven",
@@ -4678,6 +5085,9 @@ export const champions = [
     "id": "Skarner",
     "name": "Skarner",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Skarner.png",
+    "role": [
+      "Jungle"
+    ],
     "counters": [
       {
         "name": "Olaf",
@@ -4719,6 +5129,9 @@ export const champions = [
     "id": "Sona",
     "name": "Sona",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Sona.png",
+    "role": [
+      "Support"
+    ],
     "counters": [
       {
         "name": "Blitzcrank",
@@ -4760,6 +5173,9 @@ export const champions = [
     "id": "Soraka",
     "name": "Soraka",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Soraka.png",
+    "role": [
+      "Support"
+    ],
     "counters": [
       {
         "name": "Blitzcrank",
@@ -4801,6 +5217,10 @@ export const champions = [
     "id": "Swain",
     "name": "Swain",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Swain.png",
+    "role": [
+      "Support",
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Vayne",
@@ -4842,6 +5262,10 @@ export const champions = [
     "id": "Sylas",
     "name": "Sylas",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Sylas.png",
+    "role": [
+      "Mid",
+      "Jungle"
+    ],
     "counters": [
       {
         "name": "Cassiopeia",
@@ -4883,6 +5307,9 @@ export const champions = [
     "id": "Syndra",
     "name": "Syndra",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Syndra.png",
+    "role": [
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Fizz",
@@ -4924,6 +5351,10 @@ export const champions = [
     "id": "TahmKench",
     "name": "Tahm Kench",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/TahmKench.png",
+    "role": [
+      "Support",
+      "Top"
+    ],
     "counters": [
       {
         "name": "Vayne",
@@ -4965,6 +5396,10 @@ export const champions = [
     "id": "Taliyah",
     "name": "Taliyah",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Taliyah.png",
+    "role": [
+      "Jungle",
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Zed",
@@ -5006,6 +5441,10 @@ export const champions = [
     "id": "Talon",
     "name": "Talon",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Talon.png",
+    "role": [
+      "Mid",
+      "Jungle"
+    ],
     "counters": [
       {
         "name": "Pantheon",
@@ -5047,6 +5486,9 @@ export const champions = [
     "id": "Taric",
     "name": "Taric",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Taric.png",
+    "role": [
+      "Support"
+    ],
     "counters": [
       {
         "name": "Morgana",
@@ -5088,6 +5530,9 @@ export const champions = [
     "id": "Teemo",
     "name": "Teemo",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Teemo.png",
+    "role": [
+      "Top"
+    ],
     "counters": [
       {
         "name": "Xerath",
@@ -5129,6 +5574,9 @@ export const champions = [
     "id": "Thresh",
     "name": "Thresh",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Thresh.png",
+    "role": [
+      "Support"
+    ],
     "counters": [
       {
         "name": "Morgana",
@@ -5170,6 +5618,9 @@ export const champions = [
     "id": "Tristana",
     "name": "Tristana",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Tristana.png",
+    "role": [
+      "Bot"
+    ],
     "counters": [
       {
         "name": "Yasuo",
@@ -5211,6 +5662,10 @@ export const champions = [
     "id": "Trundle",
     "name": "Trundle",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Trundle.png",
+    "role": [
+      "Jungle",
+      "Top"
+    ],
     "counters": [
       {
         "name": "Jax",
@@ -5252,6 +5707,9 @@ export const champions = [
     "id": "Tryndamere",
     "name": "Tryndamere",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Tryndamere.png",
+    "role": [
+      "Top"
+    ],
     "counters": [
       {
         "name": "Jax",
@@ -5293,6 +5751,9 @@ export const champions = [
     "id": "TwistedFate",
     "name": "Twisted Fate",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/TwistedFate.png",
+    "role": [
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Yasuo",
@@ -5334,6 +5795,10 @@ export const champions = [
     "id": "Twitch",
     "name": "Twitch",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Twitch.png",
+    "role": [
+      "Bot",
+      "Jungle"
+    ],
     "counters": [
       {
         "name": "Yasuo",
@@ -5375,6 +5840,10 @@ export const champions = [
     "id": "Udyr",
     "name": "Udyr",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Udyr.png",
+    "role": [
+      "Jungle",
+      "Top"
+    ],
     "counters": [
       {
         "name": "Vayne",
@@ -5416,6 +5885,9 @@ export const champions = [
     "id": "Urgot",
     "name": "Urgot",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Urgot.png",
+    "role": [
+      "Top"
+    ],
     "counters": [
       {
         "name": "Rammus",
@@ -5457,6 +5929,10 @@ export const champions = [
     "id": "Varus",
     "name": "Varus",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Varus.png",
+    "role": [
+      "Bot",
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Yasuo",
@@ -5498,6 +5974,10 @@ export const champions = [
     "id": "Vayne",
     "name": "Vayne",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Vayne.png",
+    "role": [
+      "Bot",
+      "Top"
+    ],
     "counters": [
       {
         "name": "Caitlyn",
@@ -5539,6 +6019,10 @@ export const champions = [
     "id": "Veigar",
     "name": "Veigar",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Veigar.png",
+    "role": [
+      "Mid",
+      "Support"
+    ],
     "counters": [
       {
         "name": "Fizz",
@@ -5580,6 +6064,10 @@ export const champions = [
     "id": "Velkoz",
     "name": "Vel'Koz",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Velkoz.png",
+    "role": [
+      "Support",
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Yasuo",
@@ -5621,6 +6109,9 @@ export const champions = [
     "id": "Vex",
     "name": "Vex",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Vex.png",
+    "role": [
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Xerath",
@@ -5662,6 +6153,9 @@ export const champions = [
     "id": "Vi",
     "name": "Vi",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Vi.png",
+    "role": [
+      "Jungle"
+    ],
     "counters": [
       {
         "name": "Jax",
@@ -5703,6 +6197,9 @@ export const champions = [
     "id": "Viego",
     "name": "Viego",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Viego.png",
+    "role": [
+      "Jungle"
+    ],
     "counters": [
       {
         "name": "Jax",
@@ -5744,6 +6241,9 @@ export const champions = [
     "id": "Viktor",
     "name": "Viktor",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Viktor.png",
+    "role": [
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Kassadin",
@@ -5785,6 +6285,10 @@ export const champions = [
     "id": "Vladimir",
     "name": "Vladimir",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Vladimir.png",
+    "role": [
+      "Mid",
+      "Top"
+    ],
     "counters": [
       {
         "name": "Kled",
@@ -5826,6 +6330,10 @@ export const champions = [
     "id": "Volibear",
     "name": "Volibear",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Volibear.png",
+    "role": [
+      "Top",
+      "Jungle"
+    ],
     "counters": [
       {
         "name": "Jax",
@@ -5867,6 +6375,9 @@ export const champions = [
     "id": "Warwick",
     "name": "Warwick",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Warwick.png",
+    "role": [
+      "Jungle"
+    ],
     "counters": [
       {
         "name": "Jax",
@@ -5908,6 +6419,9 @@ export const champions = [
     "id": "Xayah",
     "name": "Xayah",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Xayah.png",
+    "role": [
+      "Bot"
+    ],
     "counters": [
       {
         "name": "Yasuo",
@@ -5949,6 +6463,10 @@ export const champions = [
     "id": "Xerath",
     "name": "Xerath",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Xerath.png",
+    "role": [
+      "Support",
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Zed",
@@ -5990,6 +6508,9 @@ export const champions = [
     "id": "XinZhao",
     "name": "Xin Zhao",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/XinZhao.png",
+    "role": [
+      "Jungle"
+    ],
     "counters": [
       {
         "name": "Jax",
@@ -6031,6 +6552,10 @@ export const champions = [
     "id": "Yasuo",
     "name": "Yasuo",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Yasuo.png",
+    "role": [
+      "Mid",
+      "Bot"
+    ],
     "counters": [
       {
         "name": "Jax",
@@ -6072,6 +6597,10 @@ export const champions = [
     "id": "Yone",
     "name": "Yone",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Yone.png",
+    "role": [
+      "Mid",
+      "Top"
+    ],
     "counters": [
       {
         "name": "Jax",
@@ -6113,6 +6642,9 @@ export const champions = [
     "id": "Yorick",
     "name": "Yorick",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Yorick.png",
+    "role": [
+      "Top"
+    ],
     "counters": [
       {
         "name": "Irelia",
@@ -6154,6 +6686,9 @@ export const champions = [
     "id": "Yuumi",
     "name": "Yuumi",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Yuumi.png",
+    "role": [
+      "Support"
+    ],
     "counters": [
       {
         "name": "Blitzcrank",
@@ -6195,6 +6730,9 @@ export const champions = [
     "id": "Zac",
     "name": "Zac",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Zac.png",
+    "role": [
+      "Jungle"
+    ],
     "counters": [
       {
         "name": "Vayne",
@@ -6236,6 +6774,9 @@ export const champions = [
     "id": "Zed",
     "name": "Zed",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Zed.png",
+    "role": [
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Lulu",
@@ -6277,6 +6818,9 @@ export const champions = [
     "id": "Zeri",
     "name": "Zeri",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Zeri.png",
+    "role": [
+      "Bot"
+    ],
     "counters": [
       {
         "name": "Nautilus",
@@ -6318,6 +6862,10 @@ export const champions = [
     "id": "Ziggs",
     "name": "Ziggs",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Ziggs.png",
+    "role": [
+      "Bot",
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Yasuo",
@@ -6359,6 +6907,10 @@ export const champions = [
     "id": "Zilean",
     "name": "Zilean",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Zilean.png",
+    "role": [
+      "Support",
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Yasuo",
@@ -6400,6 +6952,9 @@ export const champions = [
     "id": "Zoe",
     "name": "Zoe",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Zoe.png",
+    "role": [
+      "Mid"
+    ],
     "counters": [
       {
         "name": "Yasuo",
@@ -6441,6 +6996,9 @@ export const champions = [
     "id": "Zyra",
     "name": "Zyra",
     "image": "https://ddragon.leagueoflegends.com/cdn/13.24.1/img/champion/Zyra.png",
+    "role": [
+      "Support"
+    ],
     "counters": [
       {
         "name": "Xerath",
